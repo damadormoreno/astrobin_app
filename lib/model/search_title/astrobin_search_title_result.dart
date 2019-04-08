@@ -3,6 +3,7 @@ library astrobin_search_title_result;
 import 'dart:convert';
 
 import 'package:astrobin_app/model/search_title/model_search_title.dart';
+import 'package:astrobin_app/model/serializer/serializers.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
