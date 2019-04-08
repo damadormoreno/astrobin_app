@@ -1,4 +1,4 @@
-import 'package:astrobin_app/ui/widget/home.dart';
+import 'package:astrobin_app/ui/navigation/home.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());

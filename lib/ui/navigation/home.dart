@@ -1,4 +1,6 @@
-import 'package:astrobin_app/ui/widget/model_widgets.dart';
+import 'package:astrobin_app/ui/search_for_title/search_object.dart';
+import 'package:astrobin_app/ui/search_for_user/search_user.dart';
+import 'package:astrobin_app/ui/search_pod/picture_of_day.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
