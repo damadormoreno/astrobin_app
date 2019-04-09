@@ -10,7 +10,7 @@ class AstrobinRepository {
 
   AstrobinRepository(this._astrobinDataSource);
 
-  Future<BuiltList<SearchTitleItem>> searchVideos(String query) async {
+  Future<BuiltList<SearchTitleItem>> searchForTitle(String query) async {
     final searchresult = await _astrobinDataSource.searchForTitle(title: query);
     _cacheValues(title: query, nextPageUrl: searchresult.meta.next);
     if (searchresult.objects.isEmpty) throw NoSearchTitleResultsException();
