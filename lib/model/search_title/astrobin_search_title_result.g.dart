@@ -25,11 +25,14 @@ class _$AstrobinSearchTitleResultSerializer
     final result = <Object>[
       'meta',
       serializers.serialize(object.meta, specifiedType: const FullType(Meta)),
-      'objects',
-      serializers.serialize(object.objects,
-          specifiedType: const FullType(
-              BuiltList, const [const FullType(SearchTitleItem)])),
     ];
+    if (object.objects != null) {
+      result
+        ..add('objects')
+        ..add(serializers.serialize(object.objects,
+            specifiedType: const FullType(
+                BuiltList, const [const FullType(SearchTitleItem)])));
+    }
 
     return result;
   }
@@ -76,10 +79,6 @@ class _$AstrobinSearchTitleResult extends AstrobinSearchTitleResult {
   _$AstrobinSearchTitleResult._({this.meta, this.objects}) : super._() {
     if (meta == null) {
       throw new BuiltValueNullFieldError('AstrobinSearchTitleResult', 'meta');
-    }
-    if (objects == null) {
-      throw new BuiltValueNullFieldError(
-          'AstrobinSearchTitleResult', 'objects');
     }
   }
 
@@ -159,14 +158,14 @@ class AstrobinSearchTitleResultBuilder
     try {
       _$result = _$v ??
           new _$AstrobinSearchTitleResult._(
-              meta: meta.build(), objects: objects.build());
+              meta: meta.build(), objects: _objects?.build());
     } catch (_) {
       String _$failedField;
       try {
         _$failedField = 'meta';
         meta.build();
         _$failedField = 'objects';
-        objects.build();
+        _objects?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             'AstrobinSearchTitleResult', _$failedField, e.toString());

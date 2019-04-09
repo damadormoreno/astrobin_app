@@ -115,7 +115,7 @@ class _SearchObjectWidgetState extends State<SearchObjectWidget> {
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 25,
+                fontSize: 20,
               ),
             ),
             SizedBox(height: 5),

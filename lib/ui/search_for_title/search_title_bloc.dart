@@ -2,6 +2,7 @@ import 'package:astrobin_app/ui/search_for_title/search_for_title_event.dart';
 import 'package:astrobin_app/ui/search_for_title/search_for_title_state.dart';
 import 'package:bloc/bloc.dart';
 import 'package:astrobin_app/repository/astrobin_repository.dart';
+import 'package:astrobin_app/model/search_title/astrobin_search_error.dart';
 
 class SearchForTitleBloc
     extends Bloc<SearchForTitleEvent, SearchForTitleState> {
@@ -31,9 +32,9 @@ class SearchForTitleBloc
         final searchResult =
             await _astrobinRepository.searchForTitle(event.title);
         yield SearchForTitleState.success(searchResult);
-      } catch (e) {
-        yield SearchForTitleState.failure(e.message);
       } on NoSearchTitleResultsException catch (e) {
+        yield SearchForTitleState.failure(e.message);
+      } on AstrobinSearchError catch (e) {
         yield SearchForTitleState.failure(e.message);
       }
     }

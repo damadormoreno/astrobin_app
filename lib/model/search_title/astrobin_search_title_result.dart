@@ -14,6 +14,7 @@ abstract class AstrobinSearchTitleResult
     implements
         Built<AstrobinSearchTitleResult, AstrobinSearchTitleResultBuilder> {
   Meta get meta;
+  @nullable
   BuiltList<SearchTitleItem> get objects;
 
   AstrobinSearchTitleResult._();

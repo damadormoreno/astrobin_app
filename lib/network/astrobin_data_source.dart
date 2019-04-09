@@ -23,7 +23,7 @@ class AstrobinDataSource {
     if (nextUrl.isEmpty) {
       urlRaw = _searchBaseUrl + '&title__icontains=$title';
     } else {
-      urlRaw = _baseUrl + urlRaw;
+      urlRaw = _baseUrl + nextUrl;
     }
     final urlEncoded = Uri.encodeFull(urlRaw);
     final response = await client.get(urlEncoded);

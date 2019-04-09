@@ -29,7 +29,7 @@ class _SearchFieldState extends State<SearchField> {
   Widget build(BuildContext context) {
     return TextField(
       decoration: InputDecoration(
-        hintText: 'Search videos',
+        hintText: 'Busca astro',
         border: InputBorder.none,
         icon: Icon(
           Icons.search,

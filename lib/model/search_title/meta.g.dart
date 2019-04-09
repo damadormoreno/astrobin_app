@@ -17,10 +17,13 @@ class _$MetaSerializer implements StructuredSerializer<Meta> {
   @override
   Iterable serialize(Serializers serializers, Meta object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
-      'next',
-      serializers.serialize(object.next, specifiedType: const FullType(String)),
-    ];
+    final result = <Object>[];
+    if (object.next != null) {
+      result
+        ..add('next')
+        ..add(serializers.serialize(object.next,
+            specifiedType: const FullType(String)));
+    }
 
     return result;
   }
@@ -54,11 +57,7 @@ class _$Meta extends Meta {
   factory _$Meta([void updates(MetaBuilder b)]) =>
       (new MetaBuilder()..update(updates)).build();
 
-  _$Meta._({this.next}) : super._() {
-    if (next == null) {
-      throw new BuiltValueNullFieldError('Meta', 'next');
-    }
-  }
+  _$Meta._({this.next}) : super._();
 
   @override
   Meta rebuild(void updates(MetaBuilder b)) =>

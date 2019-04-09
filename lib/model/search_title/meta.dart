@@ -10,6 +10,7 @@ import 'package:built_value/serializer.dart';
 part 'meta.g.dart';
 
 abstract class Meta implements Built<Meta, MetaBuilder> {
+  @nullable
   String get next;
 
   Meta._();
