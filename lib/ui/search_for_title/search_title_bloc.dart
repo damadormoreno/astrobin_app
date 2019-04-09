@@ -1,16 +1,16 @@
-
+import 'package:astrobin_app/ui/search_for_title/search_for_title_event.dart';
+import 'package:astrobin_app/ui/search_for_title/search_for_title_state.dart';
 import 'package:bloc/bloc.dart';
 import 'package:astrobin_app/repository/astrobin_repository.dart';
 
-
-class SearchTitleBloc extends Bloc<SearchTitleEvent, SearchTitleState> {
-
+class SearchForTitleBloc
+    extends Bloc<SearchForTitleEvent, SearchForTitleState> {
   final AstrobinRepository _astrobinRepository;
 
-  SearchTitleBloc(this._astrobinRepository) : super();
+  SearchForTitleBloc(this._astrobinRepository) : super();
 
-    void onSearchInitiated(String title) {
-    dispatch(SearchTitleInitiated((b) => b..title = title));
+  void onSearchInitiated(String title) {
+    dispatch(SearchForTitleInitiated((b) => b..title = title));
   }
 
   void fetchNextResultPage() {
@@ -18,23 +18,48 @@ class SearchTitleBloc extends Bloc<SearchTitleEvent, SearchTitleState> {
   }
 
   @override
-  SearchTitleState get initialState => SearchTitleState.initial();
+  SearchForTitleState get initialState => SearchForTitleState.initial();
 
-    Stream<SearchTitleState> mapSearchInitiated(SearchTitleInitiated event) async* {
-    if (event.query.isEmpty) {
-      yield SearchTitleState.initial();
+  Stream<SearchForTitleState> mapSearchInitiated(
+      SearchForTitleInitiated event) async* {
+    if (event.title.isEmpty) {
+      yield SearchForTitleState.initial();
     } else {
-      yield SearchTitleState.loading();
+      yield SearchForTitleState.loading();
 
       try {
-        final searchResult = await _astrobinRepository.searchForTitle(event.query);
-        yield SearchTitleState.success(searchResult);
-      } on AstrobinSearchError catch (e) {
-        yield SearchTitleState.failure(e.message);
+        final searchResult =
+            await _astrobinRepository.searchForTitle(event.title);
+        yield SearchForTitleState.success(searchResult);
+      } catch (e) {
+        yield SearchForTitleState.failure(e.message);
       } on NoSearchTitleResultsException catch (e) {
-        yield SearchTitleState.failure(e.message);
+        yield SearchForTitleState.failure(e.message);
       }
     }
   }
 
+  Stream<SearchForTitleState> mapFetchNextResultPage() async* {
+    try {
+      final nextPageResults = await _astrobinRepository.fetchNextResultPage();
+      yield SearchForTitleState.success(
+          currentState.searchResults + nextPageResults);
+    } on NoNextUrlException catch (_) {
+      yield currentState.rebuild((b) => b..hasReachedEndOfResults = true);
+    } on SearchNotInitiatedException catch (e) {
+      yield SearchForTitleState.failure(e.message);
+    } catch (e) {
+      yield SearchForTitleState.failure(e.message);
+    }
+  }
+
+  @override
+  Stream<SearchForTitleState> mapEventToState(
+      SearchForTitleEvent event) async* {
+    if (event is SearchForTitleInitiated) {
+      yield* mapSearchInitiated(event);
+    } else if (event is FetchNextResultPage) {
+      yield* mapFetchNextResultPage();
+    }
+  }
 }

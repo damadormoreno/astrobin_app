@@ -1,7 +1,11 @@
+import 'package:astrobin_app/injection_container.dart';
 import 'package:astrobin_app/ui/navigation/home.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  initKiwi();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
