@@ -6,6 +6,7 @@ class AstrobinRepository {
   AstrobinDataSource _astrobinDataSource;
 
   String _lastSearchQuery;
+  String _lastSearchUserQuery;
   String _nextUrl;
 
   AstrobinRepository(this._astrobinDataSource);
@@ -17,8 +18,21 @@ class AstrobinRepository {
     return searchresult.objects;
   }
 
+  Future<BuiltList<SearchTitleItem>> searchForUser(String query) async {
+    final searchresultUser =
+        await _astrobinDataSource.searchForUser(user: query);
+    _cacheUserValues(user: query, nextPageUrl: searchresultUser.meta.next);
+    if (searchresultUser.objects.isEmpty) throw NoSearchUserResultsException();
+    return searchresultUser.objects;
+  }
+
   void _cacheValues({String title, String nextPageUrl}) {
     _lastSearchQuery = title;
+    _nextUrl = nextPageUrl;
+  }
+
+  void _cacheUserValues({String user, String nextPageUrl}) {
+    _lastSearchUserQuery = user;
     _nextUrl = nextPageUrl;
   }
 
@@ -39,6 +53,25 @@ class AstrobinRepository {
 
     return nextPageSearchResult.objects;
   }
+
+  Future<BuiltList<SearchTitleItem>> fetchNextUserResultPage() async {
+    if (_lastSearchUserQuery == null) {
+      throw SearchNotInitiatedException();
+    }
+
+    if (_nextUrl == null) {
+      throw NoNextUrlException();
+    }
+
+    final nextPageSearchUserResult = await _astrobinDataSource.searchForUser(
+        user: _lastSearchUserQuery, nextUrl: _nextUrl);
+
+    _cacheUserValues(
+        user: _lastSearchUserQuery,
+        nextPageUrl: nextPageSearchUserResult.meta.next);
+
+    return nextPageSearchUserResult.objects;
+  }
 }
 
 class SearchNotInitiatedException implements Exception {
@@ -46,6 +79,10 @@ class SearchNotInitiatedException implements Exception {
 }
 
 class NoSearchTitleResultsException implements Exception {
+  final message = "No results";
+}
+
+class NoSearchUserResultsException implements Exception {
   final message = "No results";
 }
 

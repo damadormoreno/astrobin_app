@@ -2,9 +2,8 @@ import 'package:astrobin_app/ui/widget/search_field.dart';
 import 'package:flutter/material.dart';
 
 class SearchBar extends StatelessWidget {
-  const SearchBar({
-    Key key,
-  }) : super(key: key);
+  final bool isSearchUser;
+  const SearchBar({Key key, @required this.isSearchUser}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +14,9 @@ class SearchBar extends StatelessWidget {
       ),
       child: Padding(
         padding: const EdgeInsets.only(left: 5),
-        child: SearchField(),
+        child: SearchField(
+          isSearchUser: this.isSearchUser,
+        ),
       ),
     );
   }

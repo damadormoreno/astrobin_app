@@ -12,7 +12,7 @@ class _HomeState extends State<Home> {
   final List<Widget> _children = [
     PictureOfDayWidget(Colors.grey),
     SearchObjectWidget(),
-    SearchUserWidget(Colors.amber),
+    SearchUserWidget(),
   ];
 
   @override

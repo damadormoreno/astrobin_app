@@ -1,11 +1,11 @@
 import 'package:astrobin_app/ui/search_for_title/search_title_bloc.dart';
+import 'package:astrobin_app/ui/search_for_user/search_user_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SearchField extends StatefulWidget {
-  const SearchField({
-    Key key,
-  }) : super(key: key);
+  final bool isSearchUser;
+  const SearchField({Key key, @required this.isSearchUser}) : super(key: key);
 
   @override
   _SearchFieldState createState() => _SearchFieldState();
@@ -29,7 +29,7 @@ class _SearchFieldState extends State<SearchField> {
   Widget build(BuildContext context) {
     return TextField(
       decoration: InputDecoration(
-        hintText: 'Busca astro',
+        hintText: 'Empieza a buscar',
         border: InputBorder.none,
         icon: Icon(
           Icons.search,
@@ -37,7 +37,11 @@ class _SearchFieldState extends State<SearchField> {
         ),
       ),
       onSubmitted: (title) {
-        BlocProvider.of<SearchForTitleBloc>(context).onSearchInitiated(title);
+        if (widget.isSearchUser) {
+          BlocProvider.of<SearchUserBloc>(context).onSearchInitiated(title);
+        } else {
+          BlocProvider.of<SearchForTitleBloc>(context).onSearchInitiated(title);
+        }
       },
       controller: _controller,
       focusNode: _focusNode,

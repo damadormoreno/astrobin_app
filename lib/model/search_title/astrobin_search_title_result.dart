@@ -7,6 +7,7 @@ import 'package:astrobin_app/model/serializer/serializers.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:http/http.dart';
 
 part 'astrobin_search_title_result.g.dart';
 
@@ -28,9 +29,9 @@ abstract class AstrobinSearchTitleResult
         serializers.serializeWith(AstrobinSearchTitleResult.serializer, this));
   }
 
-  static AstrobinSearchTitleResult fromJson(String jsonString) {
+  static AstrobinSearchTitleResult fromJson(Response response) {
     return serializers.deserializeWith(
-        AstrobinSearchTitleResult.serializer, json.decode(jsonString));
+        AstrobinSearchTitleResult.serializer, json.decode(utf8.decode(response.bodyBytes)));
   }
 
   static Serializer<AstrobinSearchTitleResult> get serializer =>

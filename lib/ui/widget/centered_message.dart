@@ -13,24 +13,26 @@ class CenteredMessage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Opacity(
-        opacity: 0.5,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Icon(
-              icon,
-              size: 40,
-            ),
-            Text(
-              message,
-              style: TextStyle(
-                fontSize: 15,
-                fontStyle: FontStyle.italic,
-                fontWeight: FontWeight.bold,
+      child: SingleChildScrollView(
+        child: Opacity(
+          opacity: 0.5,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Icon(
+                icon,
+                size: 40,
               ),
-            )
-          ],
+              Text(
+                message,
+                style: TextStyle(
+                  fontSize: 15,
+                  fontStyle: FontStyle.italic,
+                  fontWeight: FontWeight.bold,
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

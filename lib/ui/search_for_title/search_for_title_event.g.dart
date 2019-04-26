@@ -11,7 +11,7 @@ class _$SearchForTitleInitiated extends SearchForTitleInitiated {
   final String title;
 
   factory _$SearchForTitleInitiated(
-          [void updates(SearchForTitleInitiatedBuilder b)]) =>
+          [void Function(SearchForTitleInitiatedBuilder) updates]) =>
       (new SearchForTitleInitiatedBuilder()..update(updates)).build();
 
   _$SearchForTitleInitiated._({this.title}) : super._() {
@@ -22,7 +22,7 @@ class _$SearchForTitleInitiated extends SearchForTitleInitiated {
 
   @override
   SearchForTitleInitiated rebuild(
-          void updates(SearchForTitleInitiatedBuilder b)) =>
+          void Function(SearchForTitleInitiatedBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -76,7 +76,7 @@ class SearchForTitleInitiatedBuilder
   }
 
   @override
-  void update(void updates(SearchForTitleInitiatedBuilder b)) {
+  void update(void Function(SearchForTitleInitiatedBuilder) updates) {
     if (updates != null) updates(this);
   }
 

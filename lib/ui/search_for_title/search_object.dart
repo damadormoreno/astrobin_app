@@ -1,4 +1,5 @@
 import 'package:astrobin_app/model/search_title/model_search_title.dart';
+import 'package:astrobin_app/ui/search_for_title/detail/detail_search_for_title.dart';
 import 'package:astrobin_app/ui/search_for_title/search_for_title_state.dart';
 import 'package:astrobin_app/ui/search_for_title/search_title_bloc.dart';
 import 'package:astrobin_app/ui/widget/model_widgets.dart';
@@ -33,7 +34,9 @@ class _SearchObjectWidgetState extends State<SearchObjectWidget> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: SearchBar(),
+        title: SearchBar(
+          isSearchUser: false,
+        ),
       ),
       body: BlocBuilder(
         bloc: _searchTitleBloc,
@@ -73,7 +76,7 @@ class _SearchObjectWidgetState extends State<SearchObjectWidget> {
         itemBuilder: (context, index) {
           return index >= state.searchResults.length
               ? _buildLoaderListItem()
-              : _buildVideoListItemCard(state.searchResults[index]);
+              : _buildImageListItem(state.searchResults[index]);
         },
       ),
     );
@@ -95,8 +98,26 @@ class _SearchObjectWidgetState extends State<SearchObjectWidget> {
     return false;
   }
 
-  Widget _buildVideoListItemCard(SearchTitleItem astro) {
+  Widget _buildImageListItem(SearchTitleItem astro) {
+    return GestureDetector(
+      child: _buildImageListItemCard(astro),
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (_) {
+            return DetailSearchForTitle(
+              astroItem: astro,
+            );
+          }),
+        );
+      },
+    );
+  }
+
+  Widget _buildImageListItemCard(SearchTitleItem astro) {
     return Card(
+      color: Colors.grey.shade50,
+      elevation: 4,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
@@ -121,6 +142,8 @@ class _SearchObjectWidgetState extends State<SearchObjectWidget> {
             SizedBox(height: 5),
             Text(
               astro.description,
+              maxLines: 4,
+              overflow: TextOverflow.ellipsis,
             ),
           ],
         ),

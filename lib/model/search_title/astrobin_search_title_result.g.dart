@@ -73,7 +73,7 @@ class _$AstrobinSearchTitleResult extends AstrobinSearchTitleResult {
   final BuiltList<SearchTitleItem> objects;
 
   factory _$AstrobinSearchTitleResult(
-          [void updates(AstrobinSearchTitleResultBuilder b)]) =>
+          [void Function(AstrobinSearchTitleResultBuilder) updates]) =>
       (new AstrobinSearchTitleResultBuilder()..update(updates)).build();
 
   _$AstrobinSearchTitleResult._({this.meta, this.objects}) : super._() {
@@ -84,7 +84,7 @@ class _$AstrobinSearchTitleResult extends AstrobinSearchTitleResult {
 
   @override
   AstrobinSearchTitleResult rebuild(
-          void updates(AstrobinSearchTitleResultBuilder b)) =>
+          void Function(AstrobinSearchTitleResultBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -148,7 +148,7 @@ class AstrobinSearchTitleResultBuilder
   }
 
   @override
-  void update(void updates(AstrobinSearchTitleResultBuilder b)) {
+  void update(void Function(AstrobinSearchTitleResultBuilder) updates) {
     if (updates != null) updates(this);
   }
 

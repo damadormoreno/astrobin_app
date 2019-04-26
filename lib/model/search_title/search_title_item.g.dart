@@ -107,7 +107,7 @@ class _$SearchTitleItem extends SearchTitleItem {
   @override
   final String user;
 
-  factory _$SearchTitleItem([void updates(SearchTitleItemBuilder b)]) =>
+  factory _$SearchTitleItem([void Function(SearchTitleItemBuilder) updates]) =>
       (new SearchTitleItemBuilder()..update(updates)).build();
 
   _$SearchTitleItem._(
@@ -143,7 +143,7 @@ class _$SearchTitleItem extends SearchTitleItem {
   }
 
   @override
-  SearchTitleItem rebuild(void updates(SearchTitleItemBuilder b)) =>
+  SearchTitleItem rebuild(void Function(SearchTitleItemBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -248,7 +248,7 @@ class SearchTitleItemBuilder
   }
 
   @override
-  void update(void updates(SearchTitleItemBuilder b)) {
+  void update(void Function(SearchTitleItemBuilder) updates) {
     if (updates != null) updates(this);
   }
 

@@ -54,13 +54,13 @@ class _$Meta extends Meta {
   @override
   final String next;
 
-  factory _$Meta([void updates(MetaBuilder b)]) =>
+  factory _$Meta([void Function(MetaBuilder) updates]) =>
       (new MetaBuilder()..update(updates)).build();
 
   _$Meta._({this.next}) : super._();
 
   @override
-  Meta rebuild(void updates(MetaBuilder b)) =>
+  Meta rebuild(void Function(MetaBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
@@ -109,7 +109,7 @@ class MetaBuilder implements Builder<Meta, MetaBuilder> {
   }
 
   @override
-  void update(void updates(MetaBuilder b)) {
+  void update(void Function(MetaBuilder) updates) {
     if (updates != null) updates(this);
   }
 

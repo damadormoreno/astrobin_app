@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Astrobin App',
+      theme: ThemeData(fontFamily: "Quicksand"),
       home: Home(),
     );
   }

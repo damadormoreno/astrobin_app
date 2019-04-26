@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of search_for_title_state.dart;
+part of search_user_state.dart;
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$SearchForTitleState extends SearchForTitleState {
+class _$SearchUserState extends SearchUserState {
   @override
   final bool isLoading;
   @override
@@ -16,45 +16,42 @@ class _$SearchForTitleState extends SearchForTitleState {
   @override
   final bool hasReachedEndOfResults;
 
-  factory _$SearchForTitleState(
-          [void Function(SearchForTitleStateBuilder) updates]) =>
-      (new SearchForTitleStateBuilder()..update(updates)).build();
+  factory _$SearchUserState([void Function(SearchUserStateBuilder) updates]) =>
+      (new SearchUserStateBuilder()..update(updates)).build();
 
-  _$SearchForTitleState._(
+  _$SearchUserState._(
       {this.isLoading,
       this.searchResults,
       this.error,
       this.hasReachedEndOfResults})
       : super._() {
     if (isLoading == null) {
-      throw new BuiltValueNullFieldError('SearchForTitleState', 'isLoading');
+      throw new BuiltValueNullFieldError('SearchUserState', 'isLoading');
     }
     if (searchResults == null) {
-      throw new BuiltValueNullFieldError(
-          'SearchForTitleState', 'searchResults');
+      throw new BuiltValueNullFieldError('SearchUserState', 'searchResults');
     }
     if (error == null) {
-      throw new BuiltValueNullFieldError('SearchForTitleState', 'error');
+      throw new BuiltValueNullFieldError('SearchUserState', 'error');
     }
     if (hasReachedEndOfResults == null) {
       throw new BuiltValueNullFieldError(
-          'SearchForTitleState', 'hasReachedEndOfResults');
+          'SearchUserState', 'hasReachedEndOfResults');
     }
   }
 
   @override
-  SearchForTitleState rebuild(
-          void Function(SearchForTitleStateBuilder) updates) =>
+  SearchUserState rebuild(void Function(SearchUserStateBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  SearchForTitleStateBuilder toBuilder() =>
-      new SearchForTitleStateBuilder()..replace(this);
+  SearchUserStateBuilder toBuilder() =>
+      new SearchUserStateBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is SearchForTitleState &&
+    return other is SearchUserState &&
         isLoading == other.isLoading &&
         searchResults == other.searchResults &&
         error == other.error &&
@@ -71,7 +68,7 @@ class _$SearchForTitleState extends SearchForTitleState {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('SearchForTitleState')
+    return (newBuiltValueToStringHelper('SearchUserState')
           ..add('isLoading', isLoading)
           ..add('searchResults', searchResults)
           ..add('error', error)
@@ -80,9 +77,9 @@ class _$SearchForTitleState extends SearchForTitleState {
   }
 }
 
-class SearchForTitleStateBuilder
-    implements Builder<SearchForTitleState, SearchForTitleStateBuilder> {
-  _$SearchForTitleState _$v;
+class SearchUserStateBuilder
+    implements Builder<SearchUserState, SearchUserStateBuilder> {
+  _$SearchUserState _$v;
 
   bool _isLoading;
   bool get isLoading => _$this._isLoading;
@@ -103,9 +100,9 @@ class SearchForTitleStateBuilder
   set hasReachedEndOfResults(bool hasReachedEndOfResults) =>
       _$this._hasReachedEndOfResults = hasReachedEndOfResults;
 
-  SearchForTitleStateBuilder();
+  SearchUserStateBuilder();
 
-  SearchForTitleStateBuilder get _$this {
+  SearchUserStateBuilder get _$this {
     if (_$v != null) {
       _isLoading = _$v.isLoading;
       _searchResults = _$v.searchResults?.toBuilder();
@@ -117,24 +114,24 @@ class SearchForTitleStateBuilder
   }
 
   @override
-  void replace(SearchForTitleState other) {
+  void replace(SearchUserState other) {
     if (other == null) {
       throw new ArgumentError.notNull('other');
     }
-    _$v = other as _$SearchForTitleState;
+    _$v = other as _$SearchUserState;
   }
 
   @override
-  void update(void Function(SearchForTitleStateBuilder) updates) {
+  void update(void Function(SearchUserStateBuilder) updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  _$SearchForTitleState build() {
-    _$SearchForTitleState _$result;
+  _$SearchUserState build() {
+    _$SearchUserState _$result;
     try {
       _$result = _$v ??
-          new _$SearchForTitleState._(
+          new _$SearchUserState._(
               isLoading: isLoading,
               searchResults: searchResults.build(),
               error: error,
@@ -146,7 +143,7 @@ class SearchForTitleStateBuilder
         searchResults.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            'SearchForTitleState', _$failedField, e.toString());
+            'SearchUserState', _$failedField, e.toString());
       }
       rethrow;
     }

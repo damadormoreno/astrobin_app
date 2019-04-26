@@ -29,8 +29,33 @@ class AstrobinDataSource {
     final response = await client.get(urlEncoded);
 
     if (response.statusCode == 200) {
-      return AstrobinSearchTitleResult.fromJson(response.body);
+      return AstrobinSearchTitleResult.fromJson(response);
     } else {
+      throw AstrobinSearchError(
+          "Error en la búsqueda." /* json.decode(response.body) */);
+    }
+  }
+
+  Future<AstrobinSearchTitleResult> searchForUser({
+    String user,
+    String nextUrl = "",
+  }) async {
+    String urlRaw = "";
+    if (nextUrl.isEmpty) {
+      urlRaw = _searchBaseUrl + '&user=$user';
+    } else {
+      urlRaw = _baseUrl + nextUrl;
+    }
+    final urlEncoded = Uri.encodeFull(urlRaw);
+    try {
+      final response = await client.get(urlEncoded);
+      if (response.statusCode == 200) {
+        return AstrobinSearchTitleResult.fromJson(response);
+      } else {
+        throw AstrobinSearchError(
+            "Error en la búsqueda." /* json.decode(response.body) */);
+      }
+    } catch (exception) {
       throw AstrobinSearchError(
           "Error en la búsqueda." /* json.decode(response.body) */);
     }
