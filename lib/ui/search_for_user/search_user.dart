@@ -2,6 +2,7 @@ import 'package:astrobin_app/model/search_title/model_search_title.dart';
 import 'package:astrobin_app/ui/search_for_title/detail/detail_search_for_title.dart';
 import 'package:astrobin_app/ui/search_for_user/search_user_bloc.dart';
 import 'package:astrobin_app/ui/search_for_user/search_user_state.dart';
+import 'package:astrobin_app/ui/widget/astrobin_image_card.dart';
 import 'package:astrobin_app/ui/widget/model_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:kiwi/kiwi.dart' as kiwi;
@@ -99,61 +100,29 @@ class _SearchUserWidgetState extends State<SearchUserWidget> {
   }
 
   Widget _buildImageListItem(SearchTitleItem astro) {
-    return GestureDetector(
-      child: _buildImageListItemCard(astro),
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (_) {
-            return DetailSearchForTitle(
-              astroItem: astro,
-            );
-          }),
-        );
-      },
-    );
-  }
-
-  Widget _buildImageListItemCard(SearchTitleItem astro) {
-    return Card(
-      color: Colors.grey.shade50,
-      elevation: 4,
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: <Widget>[
-            AspectRatio(
-              aspectRatio: 16 / 9,
-              child: Image.network(
-                astro.url_regular,
-                fit: BoxFit.cover,
-              ),
-            ),
-            SizedBox(height: 5),
-            Text(
-              astro.title,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
-              ),
-            ),
-            SizedBox(height: 5),
-            Text(
-              astro.description,
-              maxLines: 4,
-              overflow: TextOverflow.ellipsis,
-            ),
-          ],
-        ),
-      ),
+    return AstrobinImageCard(
+      searchTitleItem: astro,
+      inFavorites: false,
+      onFavoriteButtonPressed: _handleFavoritesListChanged,
     );
   }
 
   Widget _buildLoaderListItem() {
     return Center(
       child: CircularProgressIndicator(),
+    );
+  }
+
+  void _handleFavoritesListChanged(SearchTitleItem astroItem) {
+    //TODO; Llamar al método de lectura y guardado en base de datos
+    print(astroItem.title);
+    final scaffold = Scaffold.of(context);
+    scaffold.showSnackBar(
+      SnackBar(
+        content: const Text('Added to favorite'),
+        action: SnackBarAction(
+            label: 'UNDO', onPressed: scaffold.hideCurrentSnackBar),
+      ),
     );
   }
 }

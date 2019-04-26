@@ -13,6 +13,8 @@ class _HomeState extends State<Home> {
     PictureOfDayWidget(Colors.grey),
     SearchObjectWidget(),
     SearchUserWidget(),
+    PictureOfDayWidget(Colors.blue),
+    PictureOfDayWidget(Colors.green),
   ];
 
   @override
@@ -36,15 +38,23 @@ class _HomeState extends State<Home> {
           items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
-              title: Text("Home"),
+              title: Text("Inicio"),
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.brightness_5),
-              title: Text("Search astro"),
+              title: Text("Astro"),
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person),
-              title: Text("Search user"),
+              title: Text("Usuario"),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.pages),
+              title: Text("Apod"),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.list),
+              title: Text("Favoritos"),
             ),
           ],
         ),
