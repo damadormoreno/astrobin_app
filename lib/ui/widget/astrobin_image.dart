@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class AstrobinImage extends StatelessWidget {
   final String imageURL;
 
-  const AstrobinImage({Key key, this.imageURL}) : super(key: key);
+  const AstrobinImage({Key key, @required this.imageURL}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
