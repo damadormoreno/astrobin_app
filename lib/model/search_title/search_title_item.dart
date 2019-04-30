@@ -13,11 +13,21 @@ abstract class SearchTitleItem
     implements Built<SearchTitleItem, SearchTitleItemBuilder> {
   String get description;
   String get title;
+  int get id;
+  BuiltList<String> get imaging_cameras;
+  BuiltList<String> get imaging_telescopes;
+  BuiltList<String> get locations;
+  BuiltList<String> get subjects;
+  BuiltList<String> get revisions;
+  String get updated;
+  String get uploaded;
   String get url_hd;
   String get url_real;
   String get url_regular;
   String get url_thumb;
   String get user;
+  @nullable
+  bool get isFavorite;
 
   SearchTitleItem._();
 

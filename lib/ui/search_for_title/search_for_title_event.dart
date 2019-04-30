@@ -2,6 +2,7 @@ library search_for_title_event;
 
 import 'dart:convert';
 
+import 'package:astrobin_app/model/search_title/search_title_item.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
