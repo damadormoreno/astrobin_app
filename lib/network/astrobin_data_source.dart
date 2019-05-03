@@ -1,5 +1,7 @@
 import 'dart:convert';
-
+import 'dart:async';
+import 'package:astrobin_app/model/astrobin_item.dart';
+import 'package:astrobin_app/model/item_pod.dart';
 import 'package:astrobin_app/model/search_title/model_search_title.dart';
 import 'package:http/http.dart' as http;
 import 'api_key.dart';
@@ -10,6 +12,9 @@ class AstrobinDataSource {
   final http.Client client;
 
   final String _baseUrl = "https://www.astrobin.com";
+  final String _baseUrlPod =
+      "https://www.astrobin.com/api/v1/imageoftheday/?format=json&limit=1&api_key=$API_KEY&api_secret=$API_SECRET";
+  final String _baseUrlById = "https://www.astrobin.com/api/v1/image/";
   final String _searchBaseUrl =
       'https://www.astrobin.com/api/v1/image/?format=json&limit=$LIMIT_RESULTS&api_key=$API_KEY&api_secret=$API_SECRET';
 
@@ -58,6 +63,31 @@ class AstrobinDataSource {
     } catch (exception) {
       throw AstrobinSearchError(
           "Error en la búsqueda." /* json.decode(response.body) */);
+    }
+  }
+
+  Future<AstrobinItem> fetchPod() async {
+    final response = await client.get(_baseUrlPod);
+    if (response.statusCode == 200) {
+      // If the call to the server was successful, parse the JSON
+      var itempod = ItemPod.fromJson(json.decode(response.body));
+      return fetchPodById(itempod.objects[0].image);
+    } else {
+      // If that call was not successful, throw an error.
+      throw Exception('Failed to load Picture of day');
+    }
+  }
+
+  Future<AstrobinItem> fetchPodById(String id) async {
+    final response = await client.get(_baseUrl +
+        id +
+        "/?format=json&limit=1&api_key=$API_KEY&api_secret=$API_SECRET");
+    if (response.statusCode == 200) {
+      // If the call to the server was successful, parse the JSON
+      return AstrobinItem.fromJson(json.decode(response.body));
+    } else {
+      // If that call was not successful, throw an error.
+      throw Exception('Failed to load Picture of day');
     }
   }
 }
