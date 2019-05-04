@@ -46,6 +46,7 @@ class _DetailSearchForTitleState extends State<DetailSearchForTitle>
                       MaterialPageRoute(
                           builder: (context) => new ImageDetail(
                                 imageUrl: widget.astroItem.url_real,
+                                imageUrlRegular: widget.astroItem.url_regular,
                               ))),
                   child: Stack(
                     fit: StackFit.expand,
@@ -85,7 +86,6 @@ class _DetailSearchForTitleState extends State<DetailSearchForTitle>
                     fontWeight: FontWeight.bold,
                     fontSize: 25,
                   ),
-                  maxLines: 1,
                 ),
                 SizedBox(
                   height: 10,

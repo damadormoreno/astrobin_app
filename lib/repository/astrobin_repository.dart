@@ -1,3 +1,4 @@
+import 'package:astrobin_app/model/astrobin_item.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:astrobin_app/model/search_title/model_search_title.dart';
 import 'package:astrobin_app/network/astrobin_data_source.dart';
@@ -10,6 +11,8 @@ class AstrobinRepository {
   String _nextUrl;
 
   AstrobinRepository(this._astrobinDataSource);
+
+  Future<AstrobinItem> fetchPod() => _astrobinDataSource.fetchPod();
 
   Future<BuiltList<SearchTitleItem>> searchForTitle(String query) async {
     final searchresult = await _astrobinDataSource.searchForTitle(title: query);

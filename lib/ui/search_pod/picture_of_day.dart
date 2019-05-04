@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 
-class PictureOfDayWidget extends StatelessWidget {
+class PictureOfDayWidget extends StatefulWidget {
   final Color color;
 
   PictureOfDayWidget(this.color);
 
+  @override
+  _PictureOfDayWidgetState createState() => _PictureOfDayWidgetState();
+}
+
+class _PictureOfDayWidgetState extends State<PictureOfDayWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,7 +18,7 @@ class PictureOfDayWidget extends StatelessWidget {
         title: Text("Astrobin App"),
       ),
       body: Container(
-        color: color,
+        color: widget.color,
       ),
     );
   }
