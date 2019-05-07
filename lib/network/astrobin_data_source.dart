@@ -94,7 +94,7 @@ class AstrobinDataSource {
 
   Future<ApodItem> fetchApodNasa() async {
     final response = await client
-        .get("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY");
+        .get("https://api.nasa.gov/planetary/apod?api_key=$API_APOD_NASA");
     if (response.statusCode == 200) {
       // If the call to the server was successful, parse the JSON
       return ApodItem.fromJson(json.decode(response.body));
