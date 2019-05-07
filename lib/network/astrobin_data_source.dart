@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:async';
+import 'package:astrobin_app/model/apodItem.dart';
 import 'package:astrobin_app/model/astrobin_item.dart';
 import 'package:astrobin_app/model/item_pod.dart';
 import 'package:astrobin_app/model/search_title/model_search_title.dart';
@@ -85,6 +86,18 @@ class AstrobinDataSource {
     if (response.statusCode == 200) {
       // If the call to the server was successful, parse the JSON
       return AstrobinItem.fromJson(json.decode(response.body));
+    } else {
+      // If that call was not successful, throw an error.
+      throw Exception('Failed to load Picture of day');
+    }
+  }
+
+  Future<ApodItem> fetchApodNasa() async {
+    final response = await client
+        .get("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY");
+    if (response.statusCode == 200) {
+      // If the call to the server was successful, parse the JSON
+      return ApodItem.fromJson(json.decode(response.body));
     } else {
       // If that call was not successful, throw an error.
       throw Exception('Failed to load Picture of day');

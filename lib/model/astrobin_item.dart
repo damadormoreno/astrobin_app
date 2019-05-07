@@ -11,14 +11,12 @@ class AstrobinItem {
   int license;
   String link;
   String linkToFits;
-  List<Null> locations;
   String orientation;
   String pixscale;
   String published;
   String ra;
   String radius;
   String resourceUri;
-  List<Null> revisions;
   List<String> subjects;
   String title;
   String updated;
@@ -46,14 +44,12 @@ class AstrobinItem {
       this.license,
       this.link,
       this.linkToFits,
-      this.locations,
       this.orientation,
       this.pixscale,
       this.published,
       this.ra,
       this.radius,
       this.resourceUri,
-      this.revisions,
       this.subjects,
       this.title,
       this.updated,
@@ -81,24 +77,12 @@ class AstrobinItem {
     license = json['license'];
     link = json['link'];
     linkToFits = json['link_to_fits'];
-    if (json['locations'] != null) {
-      locations = new List<String>();
-      json['locations'].forEach((v) {
-        locations.add(v);
-      });
-    }
     orientation = json['orientation'];
     pixscale = json['pixscale'];
     published = json['published'];
     ra = json['ra'];
     radius = json['radius'];
     resourceUri = json['resource_uri'];
-    if (json['revisions'] != null) {
-      revisions = new List<String>();
-      json['revisions'].forEach((v) {
-        revisions.add(v);
-      });
-    }
     subjects = json['subjects'].cast<String>();
     title = json['title'];
     updated = json['updated'];
@@ -128,18 +112,12 @@ class AstrobinItem {
     data['license'] = this.license;
     data['link'] = this.link;
     data['link_to_fits'] = this.linkToFits;
-    if (this.locations != null) {
-      data['locations'] = this.locations.toList();
-    }
     data['orientation'] = this.orientation;
     data['pixscale'] = this.pixscale;
     data['published'] = this.published;
     data['ra'] = this.ra;
     data['radius'] = this.radius;
     data['resource_uri'] = this.resourceUri;
-    if (this.revisions != null) {
-      data['revisions'] = this.revisions.toList();
-    }
     data['subjects'] = this.subjects;
     data['title'] = this.title;
     data['updated'] = this.updated;
