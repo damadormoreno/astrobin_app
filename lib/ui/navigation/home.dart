@@ -15,7 +15,6 @@ class _HomeState extends State<Home> {
     SearchObjectWidget(),
     SearchUserWidget(),
     ApodNasa(),
-    PictureOfDayWidget(),
   ];
 
   @override
@@ -52,11 +51,11 @@ class _HomeState extends State<Home> {
             BottomNavigationBarItem(
               icon: Icon(Icons.pages),
               title: Text("Apod"),
-            ),
+            ), /* 
             BottomNavigationBarItem(
               icon: Icon(Icons.list),
               title: Text("Favoritos"),
-            ),
+            ), */
           ],
         ),
       ),
