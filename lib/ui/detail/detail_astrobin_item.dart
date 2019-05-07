@@ -91,6 +91,42 @@ class _DetailAstrobinItemState extends State<DetailAstrobinItem>
                 Text(
                   widget.astrobinItem.description,
                 ),
+                SizedBox(
+                  height: 10,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      "Telescopios: ",
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                    ),
+                    ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: widget.astrobinItem.imagingTelescopes.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Text(
+                            widget.astrobinItem.imagingTelescopes[index]);
+                      },
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      "Cámaras: ",
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                    ),
+                    ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: widget.astrobinItem.imagingCameras.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Text(widget.astrobinItem.imagingCameras[index]);
+                      },
+                    ),
+                  ],
+                ),
               ],
             ),
           ),

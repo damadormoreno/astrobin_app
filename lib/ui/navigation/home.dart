@@ -50,7 +50,7 @@ class _HomeState extends State<Home> {
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.pages),
-              title: Text("Apod"),
+              title: Text("APOD"),
             ), /* 
             BottomNavigationBarItem(
               icon: Icon(Icons.list),
