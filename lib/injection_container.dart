@@ -1,9 +1,9 @@
 import 'package:astrobin_app/network/astrobin_data_source.dart';
 import 'package:astrobin_app/repository/astrobin_repository.dart';
 import 'package:astrobin_app/ui/apod_nasa/apod_nasa_bloc.dart';
+import 'package:astrobin_app/ui/picture_of_day/picture_of_day_bloc.dart';
 import 'package:astrobin_app/ui/search_for_title/search_title_bloc.dart';
 import 'package:astrobin_app/ui/search_for_user/search_user_bloc.dart';
-import 'package:astrobin_app/ui/search_pod/picture_of_day_bloc.dart';
 import 'package:kiwi/kiwi.dart' as kiwi;
 import 'package:http/http.dart' as http;
 

@@ -1,7 +1,7 @@
 import 'package:astrobin_app/ui/apod_nasa/apod_nasa.dart';
+import 'package:astrobin_app/ui/picture_of_day/picture_of_day.dart';
 import 'package:astrobin_app/ui/search_for_title/search_object.dart';
 import 'package:astrobin_app/ui/search_for_user/search_user.dart';
-import 'package:astrobin_app/ui/search_pod/picture_of_day.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
