@@ -1,3 +1,4 @@
+import 'package:astrobin_app/model/apodItem.dart';
 import 'package:astrobin_app/model/astrobin_item.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:astrobin_app/model/search_title/model_search_title.dart';
@@ -13,6 +14,8 @@ class AstrobinRepository {
   AstrobinRepository(this._astrobinDataSource);
 
   Future<AstrobinItem> fetchPod() => _astrobinDataSource.fetchPod();
+
+  Future<ApodItem> fetchApodNasa() => _astrobinDataSource.fetchApodNasa();
 
   Future<BuiltList<SearchTitleItem>> searchForTitle(String query) async {
     final searchresult = await _astrobinDataSource.searchForTitle(title: query);
