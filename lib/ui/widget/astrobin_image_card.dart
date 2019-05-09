@@ -55,11 +55,11 @@ class AstrobinImageCard extends StatelessWidget {
                   AstrobinImage(
                     imageURL: searchTitleItem.url_regular,
                   ),
-                  Positioned(
+                  /* Positioned(
                     child: _buildFavoriteButton(),
                     top: 2.0,
                     right: 2.0,
-                  )
+                  ) */
                 ],
               ),
               AstrobinTitle(

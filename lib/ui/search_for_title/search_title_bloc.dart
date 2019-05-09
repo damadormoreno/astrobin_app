@@ -22,6 +22,7 @@ class SearchForTitleBloc
   SearchForTitleState get initialState => SearchForTitleState.initial();
 
   Stream<SearchForTitleState> mapSearchInitiated(
+      //async* permite el uso de async/await pero lo que retorna es un Stream
       SearchForTitleInitiated event) async* {
     if (event.title.isEmpty) {
       yield SearchForTitleState.initial();

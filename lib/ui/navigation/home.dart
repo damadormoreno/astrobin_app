@@ -1,6 +1,7 @@
+import 'package:astrobin_app/ui/apod_nasa/apod_nasa.dart';
+import 'package:astrobin_app/ui/picture_of_day/picture_of_day.dart';
 import 'package:astrobin_app/ui/search_for_title/search_object.dart';
 import 'package:astrobin_app/ui/search_for_user/search_user.dart';
-import 'package:astrobin_app/ui/search_pod/picture_of_day.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -10,11 +11,10 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int _currentIndex = 0;
   final List<Widget> _children = [
-    PictureOfDayWidget(Colors.grey),
+    PictureOfDayWidget(),
     SearchObjectWidget(),
     SearchUserWidget(),
-    PictureOfDayWidget(Colors.blue),
-    PictureOfDayWidget(Colors.green),
+    ApodNasa(),
   ];
 
   @override
@@ -50,12 +50,12 @@ class _HomeState extends State<Home> {
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.pages),
-              title: Text("Apod"),
-            ),
+              title: Text("APOD"),
+            ), /* 
             BottomNavigationBarItem(
               icon: Icon(Icons.list),
               title: Text("Favoritos"),
-            ),
+            ), */
           ],
         ),
       ),
