@@ -104,10 +104,14 @@ class _DetailAstrobinItemState extends State<DetailAstrobinItem>
                     ),
                     ListView.builder(
                       shrinkWrap: true,
+                      padding: EdgeInsets.only(top: 0),
                       itemCount: widget.astrobinItem.imagingTelescopes.length,
                       itemBuilder: (BuildContext context, int index) {
-                        return Text(
-                            widget.astrobinItem.imagingTelescopes[index]);
+                        return ListTile(
+                          leading: Icon(Icons.adjust),
+                          title: Text(
+                              widget.astrobinItem.imagingTelescopes[index]),
+                        );
                       },
                     ),
                     SizedBox(
@@ -120,9 +124,14 @@ class _DetailAstrobinItemState extends State<DetailAstrobinItem>
                     ),
                     ListView.builder(
                       shrinkWrap: true,
+                      padding: EdgeInsets.only(top: 0),
                       itemCount: widget.astrobinItem.imagingCameras.length,
                       itemBuilder: (BuildContext context, int index) {
-                        return Text(widget.astrobinItem.imagingCameras[index]);
+                        return ListTile(
+                          leading: Icon(Icons.camera),
+                          title:
+                              Text(widget.astrobinItem.imagingCameras[index]),
+                        );
                       },
                     ),
                   ],

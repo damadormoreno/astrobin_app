@@ -93,6 +93,50 @@ class _DetailSearchForTitleState extends State<DetailSearchForTitle>
                 Text(
                   widget.astroItem.description,
                 ),
+                SizedBox(
+                  height: 10,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      "Telescopios: ",
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                    ),
+                    ListView.builder(
+                      shrinkWrap: true,
+                      padding: EdgeInsets.only(top: 0),
+                      itemCount: widget.astroItem.imaging_telescopes.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return ListTile(
+                          leading: Icon(Icons.adjust),
+                          title:
+                              Text(widget.astroItem.imaging_telescopes[index]),
+                        );
+                      },
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      "Cámaras: ",
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                    ),
+                    ListView.builder(
+                      shrinkWrap: true,
+                      padding: EdgeInsets.only(top: 0),
+                      itemCount: widget.astroItem.imaging_cameras.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return ListTile(
+                          leading: Icon(Icons.camera),
+                          title: Text(widget.astroItem.imaging_cameras[index]),
+                        );
+                      },
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
