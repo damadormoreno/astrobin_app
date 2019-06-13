@@ -3,7 +3,6 @@ import 'package:astrobin_app/ui/apod_nasa/apod_nasa_bloc.dart';
 import 'package:astrobin_app/ui/detail/detail_apod_item.dart';
 import 'package:flutter/material.dart';
 import 'package:kiwi/kiwi.dart' as kiwi;
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class ApodNasa extends StatefulWidget {
@@ -29,6 +28,7 @@ class _ApodNasaState extends State<ApodNasa> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.black,
         title: Text("Astronomy Picture of Day"),
@@ -40,12 +40,38 @@ class _ApodNasaState extends State<ApodNasa> {
 
           if (snapshot.hasData && snapshot.data.mediaType == "video") {
             videoId = YoutubePlayer.convertUrlToId(snapshot.data.url);
-            return Center(
-              child: YoutubePlayer(
-                context: context,
-                videoId: videoId,
-                autoPlay: false,
-                showVideoProgressIndicator: true,
+            return Container(
+              padding: EdgeInsets.all(10.0),
+              color: Colors.black,
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      snapshot.data.title,
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    YoutubePlayer(
+                      context: context,
+                      videoId: videoId,
+                      autoPlay: false,
+                      showVideoProgressIndicator: true,
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      snapshot.data.explanation,
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ],
+                ),
               ),
             );
           } else if (snapshot.hasData && snapshot.data.mediaType == "image") {
@@ -63,18 +89,6 @@ class _ApodNasaState extends State<ApodNasa> {
           }
           return Center(child: CircularProgressIndicator());
         },
-      ),
-    );
-  }
-
-  Widget _buildImage(AsyncSnapshot<ApodItem> snapshot) {
-    return Padding(
-      padding: EdgeInsets.all(14.0),
-      child: Center(
-        child: CachedNetworkImage(
-          imageUrl: snapshot.data.url,
-          errorWidget: (context, url, error) => Icon(Icons.error),
-        ),
       ),
     );
   }
