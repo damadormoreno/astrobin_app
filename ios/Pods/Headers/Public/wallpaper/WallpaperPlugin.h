@@ -1,0 +1,1 @@
+../../../../.symlinks/plugins/wallpaper/ios/Classes/WallpaperPlugin.h

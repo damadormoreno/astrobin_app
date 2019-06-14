@@ -1,0 +1,26 @@
+{
+  "name": "wallpaper",
+  "version": "0.0.4",
+  "summary": "wallpaper plugin to set wallpaper from url in android",
+  "description": "wallpaper plugin to set wallpaper from url in android",
+  "homepage": "http://example.com",
+  "license": {
+    "file": "../LICENSE"
+  },
+  "authors": {
+    "Your Company": "email@example.com"
+  },
+  "source": {
+    "path": "."
+  },
+  "source_files": "Classes/**/*",
+  "public_header_files": "Classes/**/*.h",
+  "dependencies": {
+    "Flutter": [
+
+    ]
+  },
+  "platforms": {
+    "ios": "8.0"
+  }
+}
