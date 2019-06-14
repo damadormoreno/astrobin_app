@@ -1,21 +1,26 @@
 import 'package:astrobin_app/model/apodItem.dart';
 import 'package:astrobin_app/model/astrobin_item.dart';
+import 'package:astrobin_app/model/iss_positioned.dart';
+import 'package:astrobin_app/network/iss_data_source.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:astrobin_app/model/search_title/model_search_title.dart';
 import 'package:astrobin_app/network/astrobin_data_source.dart';
 
 class AstrobinRepository {
   AstrobinDataSource _astrobinDataSource;
+  IssDataSource _issDataSource;
 
   String _lastSearchQuery;
   String _lastSearchUserQuery;
   String _nextUrl;
 
-  AstrobinRepository(this._astrobinDataSource);
+  AstrobinRepository(this._astrobinDataSource, this._issDataSource);
 
   Future<AstrobinItem> fetchPod() => _astrobinDataSource.fetchPod();
 
   Future<ApodItem> fetchApodNasa() => _astrobinDataSource.fetchApodNasa();
+
+  Future<IssPositioned> fetchIssPosition() => _issDataSource.fetchIssPosition();
 
   Future<BuiltList<SearchTitleItem>> searchForTitle(String query) async {
     final searchresult = await _astrobinDataSource.searchForTitle(title: query);

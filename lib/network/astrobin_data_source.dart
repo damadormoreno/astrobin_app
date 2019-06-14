@@ -31,7 +31,7 @@ class AstrobinDataSource {
       urlRaw = _baseUrl + nextUrl;
     }
     final urlEncoded = Uri.encodeFull(urlRaw);
-    final response = await client.get(urlEncoded);
+    final response = await client.get(urlEncoded).timeout(Duration(seconds: 5));
 
     if (response.statusCode == 200) {
       return AstrobinSearchTitleResult.fromJson(response);
@@ -53,7 +53,8 @@ class AstrobinDataSource {
     }
     final urlEncoded = Uri.encodeFull(urlRaw);
     try {
-      final response = await client.get(urlEncoded);
+      final response =
+          await client.get(urlEncoded).timeout(Duration(seconds: 5));
       if (response.statusCode == 200) {
         return AstrobinSearchTitleResult.fromJson(response);
       } else {
@@ -67,7 +68,8 @@ class AstrobinDataSource {
   }
 
   Future<AstrobinItem> fetchPod() async {
-    final response = await client.get(_baseUrlPod);
+    final response =
+        await client.get(_baseUrlPod).timeout(Duration(seconds: 5));
     if (response.statusCode == 200) {
       // If the call to the server was successful, parse the JSON
       var itempod = ItemPod.fromJson(json.decode(response.body));
@@ -79,9 +81,11 @@ class AstrobinDataSource {
   }
 
   Future<AstrobinItem> fetchPodById(String id) async {
-    final response = await client.get(_baseUrl +
-        id +
-        "/?format=json&limit=1&api_key=$API_KEY&api_secret=$API_SECRET");
+    final response = await client
+        .get(_baseUrl +
+            id +
+            "/?format=json&limit=1&api_key=$API_KEY&api_secret=$API_SECRET")
+        .timeout(Duration(seconds: 5));
     if (response.statusCode == 200) {
       // If the call to the server was successful, parse the JSON
       return AstrobinItem.fromJson(json.decode(response.body));
