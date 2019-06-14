@@ -20,7 +20,7 @@ class _SearchObjectWidgetState extends State<SearchObjectWidget> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      bloc: _searchTitleBloc,
+      builder: (BuildContext context) => _searchTitleBloc,
       child: _buildScaffold(),
     );
   }

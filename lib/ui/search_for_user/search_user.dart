@@ -1,5 +1,4 @@
 import 'package:astrobin_app/model/search_title/model_search_title.dart';
-import 'package:astrobin_app/ui/search_for_title/detail/detail_search_for_title.dart';
 import 'package:astrobin_app/ui/search_for_user/search_user_bloc.dart';
 import 'package:astrobin_app/ui/search_for_user/search_user_state.dart';
 import 'package:astrobin_app/ui/widget/astrobin_image_card.dart';
@@ -20,7 +19,7 @@ class _SearchUserWidgetState extends State<SearchUserWidget> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      bloc: _searchUserBloc,
+      builder: (BuildContext context) => _searchUserBloc,
       child: _buildScaffold(),
     );
   }

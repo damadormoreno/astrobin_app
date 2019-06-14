@@ -1,4 +1,5 @@
 import 'package:astrobin_app/ui/apod_nasa/apod_nasa.dart';
+import 'package:astrobin_app/ui/iss/iss_page.dart';
 import 'package:astrobin_app/ui/picture_of_day/picture_of_day.dart';
 import 'package:flutter/material.dart';
 import 'package:astrobin_app/ui/search/search.dart';
@@ -13,6 +14,7 @@ class _HomeState extends State<Home> {
     PictureOfDayWidget(),
     Search(),
     ApodNasa(),
+    IssPage(),
   ];
 
   @override
@@ -45,11 +47,11 @@ class _HomeState extends State<Home> {
             BottomNavigationBarItem(
               icon: Icon(Icons.pages),
               title: Text("APOD"),
-            ), /* 
+            ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.list),
-              title: Text("Favoritos"),
-            ), */
+              icon: Icon(Icons.satellite),
+              title: Text("ISS"),
+            ),
           ],
         ),
       ),
