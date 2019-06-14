@@ -116,7 +116,7 @@ class _PictureOfDayWidgetState extends State<PictureOfDayWidget> {
             height: 5,
           ),
           Text(
-            "Fotografo: " + snapshot.data.user,
+            "Fotografo/a: " + snapshot.data.user,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(

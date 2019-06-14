@@ -88,6 +88,18 @@ class _DetailAstrobinItemState extends State<DetailAstrobinItem>
                 SizedBox(
                   height: 10,
                 ),
+                Row(
+                  children: <Widget>[
+                    Icon(Icons.person),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text(widget.astrobinItem.user),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
                 Text(
                   widget.astrobinItem.description,
                 ),

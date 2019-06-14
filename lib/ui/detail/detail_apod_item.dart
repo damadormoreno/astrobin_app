@@ -89,6 +89,18 @@ class _DetailApodItemState extends State<DetailApodItem>
                 Text(
                   widget.apodItem.explanation,
                 ),
+                SizedBox(
+                  height: 10.0,
+                ),
+                Row(
+                  children: <Widget>[
+                    Icon(Icons.calendar_today),
+                    SizedBox(
+                      width: 5.0,
+                    ),
+                    Text(widget.apodItem.date)
+                  ],
+                ),
               ],
             ),
           ),

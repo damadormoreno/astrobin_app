@@ -90,6 +90,18 @@ class _DetailSearchForTitleState extends State<DetailSearchForTitle>
                 SizedBox(
                   height: 10,
                 ),
+                Row(
+                  children: <Widget>[
+                    Icon(Icons.person),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text(widget.astroItem.user),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
                 Text(
                   widget.astroItem.description,
                 ),
