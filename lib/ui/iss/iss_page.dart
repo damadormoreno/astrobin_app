@@ -62,14 +62,14 @@ class _IssPageState extends State<IssPage> {
                     MarkerLayerOptions(
                       markers: [
                         new Marker(
-                          width: 20.0,
-                          height: 20.0,
+                          width: 25.0,
+                          height: 25.0,
                           point: new LatLng(
                             double.parse(snapshot.data.issPosition.latitude),
                             double.parse(snapshot.data.issPosition.longitude),
                           ),
                           builder: (ctx) => Container(
-                                child: new FlutterLogo(),
+                                child: Image.asset("images/space-station.png"),
                               ),
                         ),
                       ],
