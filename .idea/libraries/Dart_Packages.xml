@@ -191,6 +191,13 @@
             </list>
           </value>
         </entry>
+        <entry key="firebase_analytics">
+          <value>
+            <list>
+              <option value="$PROJECT_DIR$/../../flutter/.pub-cache/hosted/pub.dartlang.org/firebase_analytics-3.0.2/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="fixnum">
           <value>
             <list>
@@ -669,6 +676,7 @@
       <root url="file://$PROJECT_DIR$/../../flutter/.pub-cache/hosted/pub.dartlang.org/csslib-0.16.0/lib" />
       <root url="file://$PROJECT_DIR$/../../flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-0.1.2/lib" />
       <root url="file://$PROJECT_DIR$/../../flutter/.pub-cache/hosted/pub.dartlang.org/dart_style-1.2.8/lib" />
+      <root url="file://$PROJECT_DIR$/../../flutter/.pub-cache/hosted/pub.dartlang.org/firebase_analytics-3.0.2/lib" />
       <root url="file://$PROJECT_DIR$/../../flutter/.pub-cache/hosted/pub.dartlang.org/fixnum-0.10.9/lib" />
       <root url="file://$PROJECT_DIR$/../../flutter/.pub-cache/hosted/pub.dartlang.org/flutter_bloc-0.17.0/lib" />
       <root url="file://$PROJECT_DIR$/../../flutter/.pub-cache/hosted/pub.dartlang.org/flutter_cache_manager-0.3.2/lib" />

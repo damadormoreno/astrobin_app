@@ -13,12 +13,12 @@ if (flutterRoot == null) {
 
 def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
 if (flutterVersionCode == null) {
-    flutterVersionCode = '5'
+    flutterVersionCode = '6'
 }
 
 def flutterVersionName = localProperties.getProperty('flutter.versionName')
 if (flutterVersionName == null) {
-    flutterVersionName = '1.0.4'
+    flutterVersionName = '1.0.5'
 }
 
 apply plugin: 'com.android.application'
@@ -42,6 +42,7 @@ android {
         applicationId "com.astro.deneb.astrobin_app"
         minSdkVersion 20
         targetSdkVersion 28
+        multiDexEnabled true
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         ndk.abiFilters 'armeabi-v7a','arm64-v8a','x86','x86_64'
@@ -80,3 +81,4 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
 }
+apply plugin: 'com.google.gms.google-services'

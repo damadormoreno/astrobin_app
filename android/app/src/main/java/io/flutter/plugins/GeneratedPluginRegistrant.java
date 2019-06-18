@@ -1,6 +1,7 @@
 package io.flutter.plugins;
 
 import io.flutter.plugin.common.PluginRegistry;
+import io.flutter.plugins.firebaseanalytics.FirebaseAnalyticsPlugin;
 import io.flutter.plugins.pathprovider.PathProviderPlugin;
 import com.tekartik.sqflite.SqflitePlugin;
 import com.prateektimer.wallpaper.WallpaperPlugin;
@@ -14,6 +15,7 @@ public final class GeneratedPluginRegistrant {
     if (alreadyRegisteredWith(registry)) {
       return;
     }
+    FirebaseAnalyticsPlugin.registerWith(registry.registrarFor("io.flutter.plugins.firebaseanalytics.FirebaseAnalyticsPlugin"));
     PathProviderPlugin.registerWith(registry.registrarFor("io.flutter.plugins.pathprovider.PathProviderPlugin"));
     SqflitePlugin.registerWith(registry.registrarFor("com.tekartik.sqflite.SqflitePlugin"));
     WallpaperPlugin.registerWith(registry.registrarFor("com.prateektimer.wallpaper.WallpaperPlugin"));
