@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "960825120356",
+    "firebase_url": "https://astrobin-app.firebaseio.com",
+    "project_id": "astrobin-app",
+    "storage_bucket": "astrobin-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:960825120356:android:1866c77db67a6542",
+        "android_client_info": {
+          "package_name": "com.astro.deneb.astrobin_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "960825120356-f2c23ab5aor6pg0063d6dnrtn3men8vg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.astro.deneb.astrobin_app",
+            "certificate_hash": "e359db448136ed410d4805db4c6c36415b949916"
+          }
+        },
+        {
+          "client_id": "960825120356-3ir1qq812ukgbrq6vqgtq7pqa1fn4lrn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiOAY6OYLR72fdRVQGb_e73837wKTmN9o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "960825120356-3ir1qq812ukgbrq6vqgtq7pqa1fn4lrn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:astrobin_app/core/constants/urls_youtube.dart';
 import 'package:astrobin_app/core/enums/view_state.dart';
 import 'package:astrobin_app/core/viewmodels/iss_viewmodel.dart';
 import 'package:flutter/material.dart';
@@ -51,7 +52,7 @@ class _IssPageState extends State<IssPage> {
             flex: 1,
             child: YoutubePlayer(
               context: context,
-              source: "https://www.youtube.com/watch?v=QwvBDC13Iqg",
+              source: UrlConstants.issLiveId,
               isLive: true,
               quality: YoutubeQuality.MEDIUM,
             ),
