@@ -1,8 +1,8 @@
 import 'package:astrobin_app/model/search_title/model_search_title.dart';
 import 'package:astrobin_app/ui/search_for_user/search_user_bloc.dart';
 import 'package:astrobin_app/ui/search_for_user/search_user_state.dart';
-import 'package:astrobin_app/ui/widget/astrobin_image_card.dart';
-import 'package:astrobin_app/ui/widget/model_widgets.dart';
+import 'package:astrobin_app/ui_refactor/widgets/astrobin_image_card.dart';
+import 'package:astrobin_app/ui_refactor/widgets/model_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:kiwi/kiwi.dart' as kiwi;
 import 'package:flutter_bloc/flutter_bloc.dart';

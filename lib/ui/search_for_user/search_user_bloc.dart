@@ -1,8 +1,9 @@
 import 'package:astrobin_app/ui/search_for_user/search_user_event.dart';
 import 'package:astrobin_app/ui/search_for_user/search_user_state.dart';
 import 'package:bloc/bloc.dart';
-import 'package:astrobin_app/repository/astrobin_repository.dart';
+import 'package:astrobin_app/core_refactor/repositories/astrobin_repository.dart';
 import 'package:astrobin_app/model/search_title/astrobin_search_error.dart';
+import 'package:astrobin_app/core_refactor/exceptions/exceptions.dart';
 
 class SearchUserBloc extends Bloc<SearchUserEvent, SearchUserState> {
   final AstrobinRepository _astrobinRepository;

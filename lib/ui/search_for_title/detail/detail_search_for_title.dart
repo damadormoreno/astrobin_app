@@ -1,6 +1,6 @@
 import 'package:astrobin_app/model/search_title/search_title_item.dart';
-import 'package:astrobin_app/ui/widget/astrobin_image.dart';
-import 'package:astrobin_app/ui/widget/image_detail.dart';
+import 'package:astrobin_app/ui_refactor/widgets/astrobin_image.dart';
+import 'package:astrobin_app/ui_refactor/widgets/image_detail.dart';
 import 'package:flutter/material.dart';
 
 class DetailSearchForTitle extends StatefulWidget {

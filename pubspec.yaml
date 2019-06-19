@@ -30,6 +30,8 @@ dependencies:
   wallpaper: ^0.0.4
   rxdart: ^0.22.0
   youtube_player_flutter: ^2.0.0
+  provider: ^3.0.0+1
+  get_it:
   flutter_map: ^0.6.1+2
   firebase_analytics: ^3.0.2
   # The following adds the Cupertino Icons font to your application.

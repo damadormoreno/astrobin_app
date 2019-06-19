@@ -21,3 +21,4 @@ doc/api/
 *.js.map
 lib/model/network/api_key.dart
 lib/network/api_key.dart
+lib/core/datasources/services/api_key.dart
