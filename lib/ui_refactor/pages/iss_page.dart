@@ -53,7 +53,7 @@ class _IssPageState extends State<IssPage> {
               context: context,
               source: "https://www.youtube.com/watch?v=QwvBDC13Iqg",
               isLive: true,
-              quality: YoutubeQuality.LOW,
+              quality: YoutubeQuality.MEDIUM,
             ),
           ),
         ],

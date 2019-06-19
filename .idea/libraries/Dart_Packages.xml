@@ -254,13 +254,6 @@
             </list>
           </value>
         </entry>
-        <entry key="get_it">
-          <value>
-            <list>
-              <option value="$USER_HOME$/flutterSdk/flutter/.pub-cache/hosted/pub.dartlang.org/get_it-1.0.3+1/lib" />
-            </list>
-          </value>
-        </entry>
         <entry key="glob">
           <value>
             <list>
@@ -697,7 +690,6 @@
       <root url="file://$USER_HOME$/flutterSdk/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_image-2.0.0-dev.1/lib" />
       <root url="file://$USER_HOME$/flutterSdk/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_map-0.6.1+2/lib" />
       <root url="file://$USER_HOME$/flutterSdk/flutter/.pub-cache/hosted/pub.dartlang.org/front_end-0.1.18/lib" />
-      <root url="file://$USER_HOME$/flutterSdk/flutter/.pub-cache/hosted/pub.dartlang.org/get_it-1.0.3+1/lib" />
       <root url="file://$USER_HOME$/flutterSdk/flutter/.pub-cache/hosted/pub.dartlang.org/glob-1.1.7/lib" />
       <root url="file://$USER_HOME$/flutterSdk/flutter/.pub-cache/hosted/pub.dartlang.org/graphs-0.2.0/lib" />
       <root url="file://$USER_HOME$/flutterSdk/flutter/.pub-cache/hosted/pub.dartlang.org/html-0.14.0+2/lib" />

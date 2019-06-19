@@ -1,6 +1,7 @@
 import 'package:astrobin_app/ui_refactor/pages/apod_nasa_page.dart';
 import 'package:astrobin_app/ui_refactor/pages/iss_page.dart';
 import 'package:astrobin_app/ui_refactor/pages/search_page.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 
 import 'pages/pod_astrobin_page.dart';
@@ -10,6 +11,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  FirebaseAnalytics analytics = FirebaseAnalytics();
+
   int _currentIndex = 0;
   final List<Widget> _children = [
     PodAstrobinPage(),
@@ -17,6 +20,12 @@ class _HomeState extends State<Home> {
     ApodNasa(),
     IssPage(),
   ];
+
+  @override
+  void initState() {
+    super.initState();
+    analytics.logAppOpen();
+  }
 
   @override
   Widget build(BuildContext context) {
