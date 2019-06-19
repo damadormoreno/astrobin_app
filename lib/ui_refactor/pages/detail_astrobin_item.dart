@@ -1,4 +1,4 @@
-import 'package:astrobin_app/core_refactor/models/astrobin_item.dart';
+import 'package:astrobin_app/core/models/astrobin_item.dart';
 import 'package:astrobin_app/ui_refactor/widgets/astrobin_image.dart';
 import 'package:astrobin_app/ui_refactor/widgets/image_detail.dart';
 import 'package:flutter/material.dart';

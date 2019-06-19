@@ -1,4 +1,4 @@
-import 'package:astrobin_app/core_refactor/viewmodels/base_viewmodel.dart';
+import 'package:astrobin_app/core/viewmodels/base_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:kiwi/kiwi.dart' as kiwi;

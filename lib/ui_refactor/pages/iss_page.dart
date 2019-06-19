@@ -1,10 +1,11 @@
 import 'dart:async';
 
-import 'package:astrobin_app/core_refactor/enums/view_state.dart';
-import 'package:astrobin_app/core_refactor/viewmodels/iss_viewmodel.dart';
+import 'package:astrobin_app/core/enums/view_state.dart';
+import 'package:astrobin_app/core/viewmodels/iss_viewmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong/latlong.dart';
+import 'package:youtube_player/youtube_player.dart';
 
 import 'base_page.dart';
 
@@ -30,14 +31,32 @@ class _IssPageState extends State<IssPage> {
         backgroundColor: Colors.black,
         centerTitle: true,
       ),
-      body: BasePage<IssViewModel>(
-        onModelReady: (viewModel) {
-          timer = Timer.periodic(
-              Duration(seconds: 15), (Timer t) => viewModel.getIssPosition());
-          viewModel.getIssPosition();
-        },
-        builder: (context, viewmodel, widget) =>
-            buildWidget(context, viewmodel),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisSize: MainAxisSize.max,
+        children: <Widget>[
+          Expanded(
+            flex: 1,
+            child: BasePage<IssViewModel>(
+              onModelReady: (viewModel) {
+                timer = Timer.periodic(Duration(seconds: 15),
+                    (Timer t) => viewModel.getIssPosition());
+                viewModel.getIssPosition();
+              },
+              builder: (context, viewmodel, widget) =>
+                  buildWidget(context, viewmodel),
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: YoutubePlayer(
+              context: context,
+              source: "https://www.youtube.com/watch?v=QwvBDC13Iqg",
+              isLive: true,
+              quality: YoutubeQuality.LOW,
+            ),
+          ),
+        ],
       ),
     );
   }

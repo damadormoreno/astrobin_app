@@ -1,9 +1,9 @@
-import 'package:astrobin_app/core_refactor/enums/view_state.dart';
-import 'package:astrobin_app/core_refactor/viewmodels/apod_viewmodel.dart';
+import 'package:astrobin_app/core/enums/view_state.dart';
+import 'package:astrobin_app/core/viewmodels/apod_viewmodel.dart';
 import 'package:astrobin_app/ui_refactor/pages/detail_apod_item.dart';
 import 'package:astrobin_app/ui_refactor/widgets/card_apod.dart';
 import 'package:flutter/material.dart';
-import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+import 'package:youtube_player/youtube_player.dart';
 
 import 'base_page.dart';
 
@@ -37,7 +37,6 @@ class ApodNasa extends StatelessWidget {
       case ViewState.Success:
         String videoId;
         if (viewmodel.apodItem.mediaType == "video") {
-          videoId = YoutubePlayer.convertUrlToId(viewmodel.apodItem.url);
           return Container(
             padding: EdgeInsets.all(10.0),
             color: Colors.black,
@@ -57,9 +56,9 @@ class ApodNasa extends StatelessWidget {
                   ),
                   YoutubePlayer(
                     context: context,
-                    videoId: videoId,
+                    source: viewmodel.apodItem.url,
                     autoPlay: false,
-                    showVideoProgressIndicator: true,
+                    quality: YoutubeQuality.MEDIUM,
                   ),
                   SizedBox(
                     height: 10,

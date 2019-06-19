@@ -478,6 +478,13 @@
             </list>
           </value>
         </entry>
+        <entry key="share">
+          <value>
+            <list>
+              <option value="$USER_HOME$/flutterSdk/flutter/.pub-cache/hosted/pub.dartlang.org/share-0.6.1+1/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="shelf">
           <value>
             <list>
@@ -646,17 +653,10 @@
             </list>
           </value>
         </entry>
-        <entry key="youtube_player_flutter">
+        <entry key="youtube_player">
           <value>
             <list>
-              <option value="$USER_HOME$/flutterSdk/flutter/.pub-cache/hosted/pub.dartlang.org/youtube_player_flutter-2.0.0/lib" />
-            </list>
-          </value>
-        </entry>
-        <entry key="ytview">
-          <value>
-            <list>
-              <option value="$USER_HOME$/flutterSdk/flutter/.pub-cache/hosted/pub.dartlang.org/ytview-0.0.7+4/lib" />
+              <option value="$USER_HOME$/flutterSdk/flutter/.pub-cache/hosted/pub.dartlang.org/youtube_player-3.4.1/lib" />
             </list>
           </value>
         </entry>
@@ -729,6 +729,7 @@
       <root url="file://$USER_HOME$/flutterSdk/flutter/.pub-cache/hosted/pub.dartlang.org/pubspec_parse-0.1.4/lib" />
       <root url="file://$USER_HOME$/flutterSdk/flutter/.pub-cache/hosted/pub.dartlang.org/quiver-2.0.3/lib" />
       <root url="file://$USER_HOME$/flutterSdk/flutter/.pub-cache/hosted/pub.dartlang.org/rxdart-0.22.0/lib" />
+      <root url="file://$USER_HOME$/flutterSdk/flutter/.pub-cache/hosted/pub.dartlang.org/share-0.6.1+1/lib" />
       <root url="file://$USER_HOME$/flutterSdk/flutter/.pub-cache/hosted/pub.dartlang.org/shelf-0.7.5/lib" />
       <root url="file://$USER_HOME$/flutterSdk/flutter/.pub-cache/hosted/pub.dartlang.org/shelf_web_socket-0.2.3/lib" />
       <root url="file://$USER_HOME$/flutterSdk/flutter/.pub-cache/hosted/pub.dartlang.org/source_gen-0.9.4+2/lib" />
@@ -752,8 +753,7 @@
       <root url="file://$USER_HOME$/flutterSdk/flutter/.pub-cache/hosted/pub.dartlang.org/watcher-0.9.7+10/lib" />
       <root url="file://$USER_HOME$/flutterSdk/flutter/.pub-cache/hosted/pub.dartlang.org/web_socket_channel-1.0.13/lib" />
       <root url="file://$USER_HOME$/flutterSdk/flutter/.pub-cache/hosted/pub.dartlang.org/yaml-2.1.16/lib" />
-      <root url="file://$USER_HOME$/flutterSdk/flutter/.pub-cache/hosted/pub.dartlang.org/youtube_player_flutter-2.0.0/lib" />
-      <root url="file://$USER_HOME$/flutterSdk/flutter/.pub-cache/hosted/pub.dartlang.org/ytview-0.0.7+4/lib" />
+      <root url="file://$USER_HOME$/flutterSdk/flutter/.pub-cache/hosted/pub.dartlang.org/youtube_player-3.4.1/lib" />
       <root url="file://$USER_HOME$/flutterSdk/flutter/bin/cache/pkg/sky_engine/lib" />
       <root url="file://$USER_HOME$/flutterSdk/flutter/packages/flutter/lib" />
       <root url="file://$USER_HOME$/flutterSdk/flutter/packages/flutter_test/lib" />

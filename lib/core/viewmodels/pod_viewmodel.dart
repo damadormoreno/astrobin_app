@@ -1,7 +1,7 @@
-import 'package:astrobin_app/core_refactor/enums/view_state.dart';
-import 'package:astrobin_app/core_refactor/models/astrobin_item.dart';
-import 'package:astrobin_app/core_refactor/repositories/astrobin_repository.dart';
-import 'package:astrobin_app/core_refactor/exceptions/exceptions.dart';
+import 'package:astrobin_app/core/enums/view_state.dart';
+import 'package:astrobin_app/core/models/astrobin_item.dart';
+import 'package:astrobin_app/core/repositories/astrobin_repository.dart';
+import 'package:astrobin_app/core/exceptions/exceptions.dart';
 
 import 'base_viewmodel.dart';
 

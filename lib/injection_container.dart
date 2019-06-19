@@ -1,14 +1,14 @@
-import 'package:astrobin_app/core_refactor/datasources/services/astrobin_data_source.dart';
-import 'package:astrobin_app/core_refactor/datasources/services/iss_data_source.dart';
-import 'package:astrobin_app/core_refactor/repositories/astrobin_repository.dart';
+import 'package:astrobin_app/core/datasources/services/astrobin_data_source.dart';
+import 'package:astrobin_app/core/datasources/services/iss_data_source.dart';
+import 'package:astrobin_app/core/repositories/astrobin_repository.dart';
 import 'package:astrobin_app/ui/search_for_title/search_title_bloc.dart';
 import 'package:astrobin_app/ui/search_for_user/search_user_bloc.dart';
 import 'package:kiwi/kiwi.dart' as kiwi;
 import 'package:http/http.dart' as http;
 
-import 'core_refactor/viewmodels/apod_viewmodel.dart';
-import 'core_refactor/viewmodels/iss_viewmodel.dart';
-import 'core_refactor/viewmodels/pod_viewmodel.dart';
+import 'core/viewmodels/apod_viewmodel.dart';
+import 'core/viewmodels/iss_viewmodel.dart';
+import 'core/viewmodels/pod_viewmodel.dart';
 
 void initKiwi() {
   kiwi.Container()

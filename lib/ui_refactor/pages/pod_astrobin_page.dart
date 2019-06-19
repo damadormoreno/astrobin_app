@@ -1,5 +1,5 @@
-import 'package:astrobin_app/core_refactor/enums/view_state.dart';
-import 'package:astrobin_app/core_refactor/viewmodels/pod_viewmodel.dart';
+import 'package:astrobin_app/core/enums/view_state.dart';
+import 'package:astrobin_app/core/viewmodels/pod_viewmodel.dart';
 import 'package:astrobin_app/ui_refactor/widgets/card_pod.dart';
 import 'package:flutter/material.dart';
 

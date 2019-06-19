@@ -1,8 +1,8 @@
+import 'package:astrobin_app/core/models/iss_positioned.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:async';
-import 'package:astrobin_app/core_refactor/models/iss_positioned.dart';
-import 'package:astrobin_app/core_refactor/exceptions/exceptions.dart';
+import 'package:astrobin_app/core/exceptions/exceptions.dart';
 
 class IssDataSource {
   final http.Client client;

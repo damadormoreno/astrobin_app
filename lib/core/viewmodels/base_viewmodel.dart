@@ -1,4 +1,4 @@
-import 'package:astrobin_app/core_refactor/enums/view_state.dart';
+import 'package:astrobin_app/core/enums/view_state.dart';
 import 'package:flutter/widgets.dart';
 
 class BaseViewModel extends ChangeNotifier {

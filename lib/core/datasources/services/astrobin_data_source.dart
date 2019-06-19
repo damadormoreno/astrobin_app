@@ -1,12 +1,12 @@
 import 'dart:convert';
 import 'dart:async';
-import 'package:astrobin_app/core_refactor/exceptions/exceptions.dart';
-import 'package:astrobin_app/core_refactor/models/apodItem.dart';
-import 'package:astrobin_app/core_refactor/models/astrobin_item.dart';
-import 'package:astrobin_app/core_refactor/models/item_pod.dart';
+import 'package:astrobin_app/core/exceptions/exceptions.dart';
+import 'package:astrobin_app/core/models/apodItem.dart';
+import 'package:astrobin_app/core/models/astrobin_item.dart';
+import 'package:astrobin_app/core/models/item_pod.dart';
 import 'package:astrobin_app/model/search_title/model_search_title.dart';
 import 'package:http/http.dart' as http;
-import 'package:astrobin_app/core_refactor/datasources/services/api_key.dart';
+import 'package:astrobin_app/core/datasources/services/api_key.dart';
 
 const int LIMIT_RESULTS = 5;
 
