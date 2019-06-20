@@ -1,7 +1,12 @@
 language: generic
 before_script:
-  - git clone https://github.com/flutter/flutter.git -b beta
-  - export PATH=`pwd`/flutter/bin:`pwd`/flutter/bin/cache/dart-sdk/bin:$PATH
+- git clone https://github.com/flutter/flutter.git -b beta
+- export PATH=`pwd`/flutter/bin:`pwd`/flutter/bin/cache/dart-sdk/bin:$PATH
 script:
-  - flutter packages get
-  - flutter test 
+- flutter packages get
+- flutter test
+env:
+  matrix:
+    secure: dQ3fa5k7/POdvDVIBhFmHvjuXBEvLFt5/OWleQ4j7v869inDnHcCTDCdJjK1QRgy2+V6WPuSNbE70zZ9UESsjrlORkui3nqKs5+Rp4WTVtdEQkTJ/04GYO395F4ROLj3IpEBrnw+RCgmadlwrVbTnPaecCiO4jmOe5BS4UDomb/vxD6sar1vAqkmE3lRbbeEKG7Bsxm9294+BphcyXGOL2FfZfsg+Ekej1RdD6KT4aVp6lYHNWNhyzGxXZRkTVcfErfJW5qWOd++S6Wj21N2rK/bNWOQtXSPl5um+85uw8lo1JzpteQ7DjnpRAb3CS/aphwPNG7wBjUnNmXyRa6dZ2WwQX8fhp+fAi/R6gjnVo8TjVH9qsddrkkBNMxQ0zgKmGA/zZwLjRTFdlaeugZ7cP8a9TzujyUnePIYVjMd99sD/kke4uKFfM4LSqe/KjeKGnWWFvs1D4QEDuD1bRThUKHFf/UXEcYXg4peuE2/QUa3leiT4YCjsTqGiMg8vwkGSsujw2cI/gUGJlwQMPhqlaZ1mTcei1YxXrTPK9tKvs878vEhGrO1p2OdsHogeNL+lB+MVnCQDXlzCryzQRv+7XAO9TqxEMnJ32nDxruheC+136G469pk9A5Au+9INDQIYMEH6b6sCuLBfx9nAtqWK2cFI932nkeiU4SDoCklRsk=
+  global:
+    secure: GLaEyVY7iCOrVnDyZExqbfH9djzRk5pniuOQZItLg/zLLb6vkfPQJR+lpm376FXJUxyAFoqhdD/mCfDLc2LJ0AXX6SdBAluznYRdMppaiuolkrt++a823GBYwFFSPheUaDaC0mZRpMuFiVyHBN6c+XzCAMG8BNjRmPukCwWiy3YdMr2z+g4S5B/+G1RVjkZ1KQc3uQIO1BUHnhjm14hyS/cgmqun1mcndf5eAD4ZNPdCd/Vfyv/eGQeQXavUNDLCk7y3Hb1q7DsQaIKJ/Wy3DWkRikw3+fuOHouJBaZQYWn/zANupypCt1deVrzHLez4RlmLIQI62LlhfNFhPy4mf54zc5HxCUSkBHPYuHHryrusSDmv0NjaTALzx7H3Q74tYzMBeO2hRLfKh47yeGelSzJ5N6lLXbKJG9P218QIyGm3ojC0OcNtnUF+EsXwtqUynSTDfQoYrMgP0PX90vCWBj4DCIhnvXDN87N6anbSepZCoabQ971FAAgBdLalxbk1v4t9kHHDI/vPuhsW6kdGcvDW4yXqeODZa5Widyqq0QxzUTMX7+xHMd5X8Gb9FXJC7lPaEwrJkl3A4KYTwHOswskRG79j9Lwy1MzNuifxe7sswayZo+wZhjD+PoVv3rcvJ7qj7EvSTHVYMVrrZcyoSRBzxqjd9snh5mmY2VX97Zw=
