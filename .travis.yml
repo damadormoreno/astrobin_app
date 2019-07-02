@@ -4,7 +4,7 @@ before_script:
 - export PATH=`pwd`/flutter/bin:`pwd`/flutter/bin/cache/dart-sdk/bin:$PATH
 script:
 - flutter packages get
-- flutter test
+#- flutter test
 env:
   matrix:
     secure: dQ3fa5k7/POdvDVIBhFmHvjuXBEvLFt5/OWleQ4j7v869inDnHcCTDCdJjK1QRgy2+V6WPuSNbE70zZ9UESsjrlORkui3nqKs5+Rp4WTVtdEQkTJ/04GYO395F4ROLj3IpEBrnw+RCgmadlwrVbTnPaecCiO4jmOe5BS4UDomb/vxD6sar1vAqkmE3lRbbeEKG7Bsxm9294+BphcyXGOL2FfZfsg+Ekej1RdD6KT4aVp6lYHNWNhyzGxXZRkTVcfErfJW5qWOd++S6Wj21N2rK/bNWOQtXSPl5um+85uw8lo1JzpteQ7DjnpRAb3CS/aphwPNG7wBjUnNmXyRa6dZ2WwQX8fhp+fAi/R6gjnVo8TjVH9qsddrkkBNMxQ0zgKmGA/zZwLjRTFdlaeugZ7cP8a9TzujyUnePIYVjMd99sD/kke4uKFfM4LSqe/KjeKGnWWFvs1D4QEDuD1bRThUKHFf/UXEcYXg4peuE2/QUa3leiT4YCjsTqGiMg8vwkGSsujw2cI/gUGJlwQMPhqlaZ1mTcei1YxXrTPK9tKvs878vEhGrO1p2OdsHogeNL+lB+MVnCQDXlzCryzQRv+7XAO9TqxEMnJ32nDxruheC+136G469pk9A5Au+9INDQIYMEH6b6sCuLBfx9nAtqWK2cFI932nkeiU4SDoCklRsk=
