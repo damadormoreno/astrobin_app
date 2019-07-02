@@ -2,7 +2,7 @@ import 'package:astrobin_app/ui/search_for_title/search_for_title_event.dart';
 import 'package:astrobin_app/ui/search_for_title/search_for_title_state.dart';
 import 'package:bloc/bloc.dart';
 import 'package:astrobin_app/core/repositories/astrobin_repository.dart';
-import 'package:astrobin_app/model/search_title/astrobin_search_error.dart';
+import 'package:astrobin_app/core/exceptions/astrobin_search_error.dart';
 import 'package:astrobin_app/core/exceptions/exceptions.dart';
 
 class SearchForTitleBloc
