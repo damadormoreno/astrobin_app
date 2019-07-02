@@ -30,6 +30,14 @@ class AstrobinRepository {
     return searchresult.objects;
   }
 
+  Future<List<AstrobinItem>> searchForTitleRefactor(String query) async {
+    final searchresult =
+        await _astrobinDataSource.searchForTitleRefactor(title: query);
+    _cacheValues(title: query, nextPageUrl: searchresult.meta.next);
+    if (searchresult.objects.isEmpty) throw NoSearchTitleResultsException();
+    return searchresult.objects;
+  }
+
   Future<BuiltList<SearchTitleItem>> searchForUser(String query) async {
     final searchresultUser =
         await _astrobinDataSource.searchForUser(user: query);
@@ -59,6 +67,24 @@ class AstrobinRepository {
 
     final nextPageSearchResult = await _astrobinDataSource.searchForTitle(
         title: _lastSearchQuery, nextUrl: _nextUrl);
+
+    _cacheValues(
+        title: _lastSearchQuery, nextPageUrl: nextPageSearchResult.meta.next);
+
+    return nextPageSearchResult.objects;
+  }
+
+  Future<List<AstrobinItem>> fetchNextResultPageRefactor() async {
+    if (_lastSearchQuery == null) {
+      throw SearchNotInitiatedException();
+    }
+
+    if (_nextUrl == null) {
+      throw NoNextUrlException();
+    }
+
+    final nextPageSearchResult = await _astrobinDataSource
+        .searchForTitleRefactor(title: _lastSearchQuery, nextUrl: _nextUrl);
 
     _cacheValues(
         title: _lastSearchQuery, nextPageUrl: nextPageSearchResult.meta.next);

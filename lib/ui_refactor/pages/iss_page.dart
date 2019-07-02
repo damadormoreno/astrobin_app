@@ -64,11 +64,9 @@ class _IssPageState extends State<IssPage> {
 
   Widget buildWidget(BuildContext context, IssViewModel viewmodel) {
     switch (viewmodel.state) {
-      case ViewState.Loading:
-        return Center(
-          child: CircularProgressIndicator(),
-        );
       case ViewState.Initial:
+      case ViewState.EndOfResults:
+      case ViewState.Loading:
         return Center(
           child: CircularProgressIndicator(),
         );

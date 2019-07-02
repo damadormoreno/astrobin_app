@@ -9,6 +9,7 @@ import 'package:http/http.dart' as http;
 import 'core/viewmodels/apod_viewmodel.dart';
 import 'core/viewmodels/iss_viewmodel.dart';
 import 'core/viewmodels/pod_viewmodel.dart';
+import 'core/viewmodels/search_title_viewmodel.dart';
 
 void initKiwi() {
   kiwi.Container()
@@ -20,5 +21,6 @@ void initKiwi() {
     ..registerFactory((c) => SearchUserBloc(c.resolve()))
     ..registerFactory((c) => IssViewModel(c.resolve()))
     ..registerFactory((c) => PodViewModel(c.resolve()))
+    ..registerFactory((c) => SearchTitleViewModel(c.resolve()))
     ..registerFactory((c) => ApodViewModel(c.resolve()));
 }

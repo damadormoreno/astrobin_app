@@ -4,6 +4,7 @@ import 'package:astrobin_app/core/exceptions/exceptions.dart';
 import 'package:astrobin_app/core/models/apodItem.dart';
 import 'package:astrobin_app/core/models/astrobin_item.dart';
 import 'package:astrobin_app/core/models/item_pod.dart';
+import 'package:astrobin_app/core/models/search_astrobin_item.dart';
 import 'package:astrobin_app/model/search_title/model_search_title.dart';
 import 'package:http/http.dart' as http;
 import 'package:astrobin_app/core/datasources/services/api_key.dart';
@@ -36,6 +37,27 @@ class AstrobinDataSource {
 
     if (response.statusCode == 200) {
       return AstrobinSearchTitleResult.fromJson(response);
+    } else {
+      throw AstrobinSearchError(
+          "Error en la búsqueda." /* json.decode(response.body) */);
+    }
+  }
+
+  Future<SearchAstrobinItem> searchForTitleRefactor({
+    String title,
+    String nextUrl = "",
+  }) async {
+    String urlRaw = "";
+    if (nextUrl.isEmpty) {
+      urlRaw = _searchBaseUrl + '&title__icontains=$title';
+    } else {
+      urlRaw = _baseUrl + nextUrl;
+    }
+    final urlEncoded = Uri.encodeFull(urlRaw);
+    final response = await client.get(urlEncoded).timeout(Duration(seconds: 5));
+
+    if (response.statusCode == 200) {
+      return SearchAstrobinItem.fromJson(json.decode(response.body));
     } else {
       throw AstrobinSearchError(
           "Error en la búsqueda." /* json.decode(response.body) */);

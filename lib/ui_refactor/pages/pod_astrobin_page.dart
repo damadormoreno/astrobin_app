@@ -23,10 +23,8 @@ class PodAstrobinPage extends StatelessWidget {
 
   Widget buildWidget(BuildContext context, PodViewModel viewmodel) {
     switch (viewmodel.state) {
+      case ViewState.EndOfResults:
       case ViewState.Loading:
-        return Center(
-          child: CircularProgressIndicator(),
-        );
       case ViewState.Initial:
         return Center(
           child: CircularProgressIndicator(),

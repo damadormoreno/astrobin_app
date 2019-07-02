@@ -25,17 +25,14 @@ class ApodNasa extends StatelessWidget {
   Widget buildWidget(BuildContext context, ApodViewModel viewmodel) {
     switch (viewmodel.state) {
       case ViewState.Loading:
-        return Center(
-          child: CircularProgressIndicator(),
-        );
       case ViewState.Initial:
         return Center(
           child: CircularProgressIndicator(),
         );
       case ViewState.Failure:
         return Center(child: Text("Ha ocurrido un error"));
+      case ViewState.EndOfResults:
       case ViewState.Success:
-        String videoId;
         if (viewmodel.apodItem.mediaType == "video") {
           return Container(
             padding: EdgeInsets.all(10.0),
