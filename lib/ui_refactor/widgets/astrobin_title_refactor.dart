@@ -1,6 +1,5 @@
 import 'package:astrobin_app/core/models/astrobin_item.dart';
 import 'package:flutter/material.dart';
-import 'package:astrobin_app/model/search_title/model_search_title.dart';
 
 class AstrobinTitle extends StatelessWidget {
   final AstrobinItem astrobinItem;

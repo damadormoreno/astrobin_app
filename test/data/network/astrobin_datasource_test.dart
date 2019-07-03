@@ -1,5 +1,4 @@
 import 'package:astrobin_app/core/datasources/services/astrobin_data_source.dart';
-import 'package:astrobin_app/model/search_title/model_search_title.dart';
 import 'package:mockito/mockito.dart';
 import 'package:http/http.dart' as http;
 import 'dart:io';

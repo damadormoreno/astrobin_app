@@ -1,7 +1,5 @@
+import 'package:astrobin_app/ui_refactor/pages/search_for_user.dart';
 import 'package:flutter/material.dart';
-import 'package:astrobin_app/ui/search_for_title/search_object.dart';
-import 'package:astrobin_app/ui/search_for_user/search_user.dart';
-
 import 'search_for_title.dart';
 
 class SearchPage extends StatelessWidget {
@@ -30,7 +28,7 @@ class SearchPage extends StatelessWidget {
           body: TabBarView(
             children: <Widget>[
               SearchObjectWidgetRefactor(),
-              SearchUserWidget(),
+              SearchUserWidgetRefactor(),
             ],
           ),
         ),

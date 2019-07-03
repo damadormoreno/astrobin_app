@@ -1,7 +1,6 @@
 import 'package:astrobin_app/core/enums/view_state.dart';
 import 'package:astrobin_app/core/models/astrobin_item.dart';
 import 'package:astrobin_app/core/viewmodels/search_title_viewmodel.dart';
-import 'package:astrobin_app/model/search_title/model_search_title.dart';
 import 'package:astrobin_app/ui_refactor/widgets/astrobin_image_card_refactor.dart';
 import 'package:astrobin_app/ui_refactor/widgets/model_widgets.dart';
 import 'package:astrobin_app/ui_refactor/widgets/search_bar.dart';
@@ -27,7 +26,6 @@ class _SearchObjectWidgetRefactorState
             appBar: AppBar(
               backgroundColor: Colors.black,
               title: SearchBar(
-                isSearchUser: false,
                 viewModel: viewmodel,
               ),
             ),
@@ -106,7 +104,7 @@ class _SearchObjectWidgetRefactorState
     );
   }
 
-  void _handleFavoritesListChanged(SearchTitleItem astroItem) {
+  void _handleFavoritesListChanged(AstrobinItem astroItem) {
     //TODO; Llamar al método de lectura y guardado en base de datos
     print(astroItem.title);
     final scaffold = Scaffold.of(context);
