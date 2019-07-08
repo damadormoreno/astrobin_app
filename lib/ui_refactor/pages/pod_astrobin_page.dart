@@ -14,7 +14,7 @@ class PodAstrobinPage extends StatelessWidget {
       builder: (context, viewmodel, child) => Scaffold(
             appBar: AppBar(
               backgroundColor: Colors.black,
-              title: Text("Astronomy Picture of Day"),
+              title: Text("Astrobin Picture of Day"),
             ),
             body: buildWidget(context, viewmodel),
           ),

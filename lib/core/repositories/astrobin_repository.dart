@@ -1,13 +1,16 @@
+import 'package:astrobin_app/core/datasources/local/apod_dao.dart';
 import 'package:astrobin_app/core/exceptions/exceptions.dart';
 import 'package:astrobin_app/core/models/apodItem.dart';
 import 'package:astrobin_app/core/models/astrobin_item.dart';
 import 'package:astrobin_app/core/models/iss_positioned.dart';
 import 'package:astrobin_app/core/datasources/services/iss_data_source.dart';
 import 'package:astrobin_app/core/datasources/services/astrobin_data_source.dart';
+import 'package:intl/intl.dart';
 
 class AstrobinRepository {
   AstrobinDataSource _astrobinDataSource;
   IssDataSource _issDataSource;
+  final apodDao = ApodDao();
 
   String _lastSearchQuery;
   String _lastSearchUserQuery;
@@ -17,7 +20,17 @@ class AstrobinRepository {
 
   Future<AstrobinItem> fetchPod() => _astrobinDataSource.fetchPod();
 
-  Future<ApodItem> fetchApodNasa() => _astrobinDataSource.fetchApodNasa();
+  Future<ApodItem> fetchApodNasa() async {
+    var now = DateTime.now();
+    var formater = new DateFormat("yyyy-MM-dd");
+
+    ApodItem apodItem = await apodDao.getApod(formater.format(now));
+    if (apodItem == null) {
+      apodItem = await _astrobinDataSource.fetchApodNasa();
+      apodDao.insert(apodItem);
+    }
+    return apodItem;
+  }
 
   Future<IssPositioned> fetchIssPosition() => _issDataSource.fetchIssPosition();
 

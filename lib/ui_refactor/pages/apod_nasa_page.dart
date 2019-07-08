@@ -15,7 +15,7 @@ class ApodNasa extends StatelessWidget {
       builder: (context, viewmodel, child) => Scaffold(
             appBar: AppBar(
               backgroundColor: Colors.black,
-              title: Text("Astronomy Picture of Day"),
+              title: Text("Astronomy Picture of Day (NASA)"),
             ),
             body: buildWidget(context, viewmodel),
           ),

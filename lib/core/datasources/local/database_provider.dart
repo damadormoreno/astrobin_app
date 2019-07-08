@@ -5,6 +5,8 @@ import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 
+import 'apod_dao.dart';
+
 final favoritesTable = "favorites";
 
 class DatabaseProvider {
@@ -25,26 +27,15 @@ class DatabaseProvider {
     Directory documentsDirectory = await getApplicationDocumentsDirectory();
     //"astro.db is our database instance name
     String path = join(documentsDirectory.path, "astro.db");
-    var database = await openDatabase(path,
-        version: 1, onCreate: initDB, onUpgrade: onUpgrade);
+    var database = await openDatabase(path, version: 1,
+        onCreate: (Database db, int version) async {
+      await db.execute(ApodDao().createTableQuery);
+    }, onUpgrade: onUpgrade);
     return database;
   }
 
   //This is optional, and only used for changing DB schema migrations
   void onUpgrade(Database database, int oldVersion, int newVersion) {
     if (newVersion > oldVersion) {}
-  }
-
-  void initDB(Database database, int version) async {
-    //TODO: Cambiar a la tabla wena
-
-    await database.execute("CREATE TABLE $favoritesTable ("
-        "id INTEGER PRIMARY KEY, "
-        "description TEXT, "
-        /*SQLITE doesn't have boolean type
-        so we store isDone as integer where 0 is false
-        and 1 is true*/
-        "is_done INTEGER "
-        ")");
   }
 }
