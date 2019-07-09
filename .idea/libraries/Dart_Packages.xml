@@ -478,6 +478,13 @@
             </list>
           </value>
         </entry>
+        <entry key="shared_preferences">
+          <value>
+            <list>
+              <option value="$USER_HOME$/flutterSdk/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences-0.5.3+2/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="shelf">
           <value>
             <list>
@@ -722,6 +729,7 @@
       <root url="file://$USER_HOME$/flutterSdk/flutter/.pub-cache/hosted/pub.dartlang.org/quiver-2.0.3/lib" />
       <root url="file://$USER_HOME$/flutterSdk/flutter/.pub-cache/hosted/pub.dartlang.org/rxdart-0.22.0/lib" />
       <root url="file://$USER_HOME$/flutterSdk/flutter/.pub-cache/hosted/pub.dartlang.org/share-0.6.1+1/lib" />
+      <root url="file://$USER_HOME$/flutterSdk/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences-0.5.3+2/lib" />
       <root url="file://$USER_HOME$/flutterSdk/flutter/.pub-cache/hosted/pub.dartlang.org/shelf-0.7.5/lib" />
       <root url="file://$USER_HOME$/flutterSdk/flutter/.pub-cache/hosted/pub.dartlang.org/shelf_web_socket-0.2.3/lib" />
       <root url="file://$USER_HOME$/flutterSdk/flutter/.pub-cache/hosted/pub.dartlang.org/source_gen-0.9.4+2/lib" />

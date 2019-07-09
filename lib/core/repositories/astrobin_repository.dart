@@ -1,4 +1,5 @@
 import 'package:astrobin_app/core/datasources/local/apod_dao.dart';
+import 'package:astrobin_app/core/datasources/local/astrobin_dao.dart';
 import 'package:astrobin_app/core/exceptions/exceptions.dart';
 import 'package:astrobin_app/core/models/apodItem.dart';
 import 'package:astrobin_app/core/models/astrobin_item.dart';
@@ -6,11 +7,13 @@ import 'package:astrobin_app/core/models/iss_positioned.dart';
 import 'package:astrobin_app/core/datasources/services/iss_data_source.dart';
 import 'package:astrobin_app/core/datasources/services/astrobin_data_source.dart';
 import 'package:intl/intl.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class AstrobinRepository {
   AstrobinDataSource _astrobinDataSource;
   IssDataSource _issDataSource;
   final apodDao = ApodDao();
+  final astrobinDao = AstrobinDao();
 
   String _lastSearchQuery;
   String _lastSearchUserQuery;
@@ -18,7 +21,32 @@ class AstrobinRepository {
 
   AstrobinRepository(this._astrobinDataSource, this._issDataSource);
 
-  Future<AstrobinItem> fetchPod() => _astrobinDataSource.fetchPod();
+  Future<AstrobinItem> fetchPod() async {
+    var now = DateTime.now();
+    final formatter = new DateFormat("yyyy-MM-dd hh:mm");
+    String nowFormatted = formatter.format(now);
+
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    AstrobinItem astrobinItem;
+    List<AstrobinItem> pods = await astrobinDao.getAstrobinItems();
+    if (pods.length > 0) astrobinItem = pods.first;
+
+    if (astrobinItem != null &&
+        (prefs.getString("fetchPodDate") ?? "" != "") &&
+        DateTime.parse(nowFormatted)
+            .isBefore(DateTime.parse(prefs.getString("fetchPodDate")))) {
+    } else {
+      astrobinItem = await _astrobinDataSource.fetchPod();
+      astrobinDao.insert(astrobinItem);
+      var newFetch = new DateTime.now();
+      newFetch.add(new Duration(hours: 5));
+      prefs.setString(
+          "fetchPodDate", "2019-07-08 19:00" /*formatter.format(newFetch)*/);
+    }
+
+    return astrobinItem;
+  }
 
   Future<ApodItem> fetchApodNasa() async {
     var now = DateTime.now();

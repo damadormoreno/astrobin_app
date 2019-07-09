@@ -6,6 +6,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 
 import 'apod_dao.dart';
+import 'astrobin_dao.dart';
 
 final favoritesTable = "favorites";
 
@@ -30,6 +31,7 @@ class DatabaseProvider {
     var database = await openDatabase(path, version: 1,
         onCreate: (Database db, int version) async {
       await db.execute(ApodDao().createTableQuery);
+      await db.execute(AstrobinDao().createTableQuery);
     }, onUpgrade: onUpgrade);
     return database;
   }
